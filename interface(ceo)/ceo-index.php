@@ -1,4 +1,7 @@
-	
+<?php
+    include('../php/DB_connect.php');
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -92,7 +95,8 @@
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-inverse card-primary">
                                 <div class="card-block pb-0">
-                                    <h4 class="mb-0">$9823</h4>
+                                <!-- Sales function goes here-->
+                                    <h4 class="mb-0">$<?php echo $totalSales ?></h4>
                                     <p>Sales</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
@@ -132,8 +136,9 @@
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-inverse card-danger">
                                 <div class="card-block pb-0">
-                                    <h4 class="mb-0">9823</h4>
-                                    <p>Expenses</p>
+                                <!-- Store expenses -->
+                                    <h4 class="mb-0">$<?php echo $totalExpense ?></h4>
+                                    <p>Total Expenses</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
                                     <canvas id="card-chart4" class="chart" height="70"></canvas>
