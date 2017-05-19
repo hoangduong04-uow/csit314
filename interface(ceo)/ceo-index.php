@@ -137,7 +137,7 @@
                             <div class="card card-inverse card-danger">
                                 <div class="card-block pb-0">
                                 <!-- Store expenses -->
-                                    <h4 class="mb-0">$<?php echo $totalExpense ?></h4>
+                                    <h4 class="mb-0">$<?php echo $totalStoreExpense ?></h4>
                                     <p>Total Expenses</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
