@@ -22,10 +22,10 @@ function calProfit($conn, $table)
 function calReturn($conn, $table)
 {
   // total number of return
-  $query = "select sum(RETURN) from $table";  
+  $query = "SELECT SUM(RETURN) FROM $table";  
   $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB (calReturn)"). $con->connect_error; 
-  //print_r ($result);
+  if (!$result) die ("Unable to query DB (calReturn)"). $conn->connect_error; 
+  print_r ($result);
   return $result->fetch_row()[0];
 }
 ?>

@@ -96,8 +96,8 @@
                             <div class="card card-inverse card-primary">
                                 <div class="card-block pb-0">
                                 <!-- Sales function goes here-->
-                                    <h4 class="mb-0">$<?php echo $totalSales ?></h4>
-                                    <p>Sales</p>
+                                    <h4 class="mb-0"><?php echo $totalSales ?></h4>
+                                    <p>Number of sales</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
                                     <canvas id="card-chart1" class="chart" height="70"></canvas>
@@ -109,8 +109,9 @@
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-inverse card-info">
                                 <div class="card-block pb-0">
+                                <!-- Return function goes here-->
                                  
-                                    <h4 class="mb-0">123</h4>
+                                    <h4 class="mb-0"><?php echo $totalReturn ?></h4>
                                     <p>Item Returns</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">

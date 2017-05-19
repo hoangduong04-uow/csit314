@@ -1,15 +1,6 @@
 <?php 
 
 
-function connectDB() {
-  define ('DBSERVER', 'localhost:3306');
-  define ('DBUSER', 'root');
-  define ('DBPASS','root');
-  define ('DBNAME','CSIT314');
-  
-  $mysqli = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
-    return $mysqli;
-}
 
 function getQuantity($conn, $table) {
   // get the quantities of all the items

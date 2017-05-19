@@ -3,6 +3,17 @@
 include('store_fn.php');
 include('item_fn.php');
 
+
+function connectDB() {
+  define ('DBSERVER', 'localhost:3306');
+  define ('DBUSER', 'root');
+  define ('DBPASS','root');
+  define ('DBNAME','CSIT314');
+  
+  $mysqli = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
+    return $mysqli;
+}
+
 $item_table = "ITEMS";
 $store_table = "STORE";
 
@@ -12,7 +23,7 @@ $totalSales = calTotalSalesNo($conn, $item_table);
 $quantities = getQuantity($conn, $item_table);
 $storeExpense = calStoreExpense($conn, $store_table);
 $totalStoreExpense = calTotalStoreExpense($conn, $store_table);
-//$returnNo = calReturn($conn);
+$totalReturn = calReturn($conn, $store_table);
 
 $Info = array();
 $Info['PROFIT'] = $profit;
