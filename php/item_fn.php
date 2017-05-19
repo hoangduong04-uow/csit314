@@ -19,7 +19,7 @@ function calProfit($conn)
   return $result->fetch_row()[0];
 }
 
-function calReturn()
+function calReturn($conn)
 {
   // total number of return
   $query = "select sum(RETURN) from items";  
