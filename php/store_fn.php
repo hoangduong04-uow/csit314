@@ -40,7 +40,7 @@ function calTotalStoreExpense($conn) {
   $result = $conn->query ($query);
   if (!$result) die ("Unable to query DB"). $con->connect_error; 
   $row = $result->fetch_assoc();
-  $totalExpense = $row['COST']+$row['FREIGHT']+['WAGES']+$row['OVERHEAD'];
+  $totalExpense = $row['COST'] + $row['FREIGHT'] + $row['WAGES'] + $row['OVERHEAD'];
   return $totalExpense;
 }
 
