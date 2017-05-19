@@ -3,12 +3,15 @@
 include('store_fn.php');
 include('item_fn.php');
 
+$item_table = "ITEMS";
+$store_table = "STORE";
+
 $conn = connectDB();
-$profit = calProfit($conn);
-$totalSales = calTotalSalesNo($conn);
-$quantities = getQuantity($conn);
-$storeExpense = calStoreExpense($conn);
-$totalStoreExpense = calTotalStoreExpense($conn);
+$profit = calProfit($conn, $item_table);
+$totalSales = calTotalSalesNo($conn, $item_table);
+$quantities = getQuantity($conn, $item_table);
+$storeExpense = calStoreExpense($conn, $store_table);
+$totalStoreExpense = calTotalStoreExpense($conn, $store_table);
 //$returnNo = calReturn($conn);
 
 $Info = array();

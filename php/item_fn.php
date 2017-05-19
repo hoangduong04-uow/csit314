@@ -1,30 +1,30 @@
 <?php
-function calTotalSalesNo($conn)
+function calTotalSalesNo($conn, $table)
 {
   // total number of sale
-  $query = "select sum(SALECOUNT) from items";  
+  $query = "select sum(SALECOUNT) from $table";  
   $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB"). $con->connect_error; 
+  if (!$result) die ("Unable to query DB (calTotalSalesNo)"). $con->connect_error; 
   //print_r ($result);
   return $result->fetch_row()[0];
 }
 
-function calProfit($conn)
+function calProfit($conn, $table)
 {
   // profit
-  $query = "select sum(PROFIT) from items";  
+  $query = "select sum(PROFIT) from $table";  
   $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB"). $conn->connect_error; 
+  if (!$result) die ("Unable to query DB (calProfit)"). $conn->connect_error; 
   //print_r ($result);
   return $result->fetch_row()[0];
 }
 
-function calReturn($conn)
+function calReturn($conn, $table)
 {
   // total number of return
-  $query = "select sum(RETURN) from items";  
-  $result = $con->query ($query);
-  if (!$result) die ("Unable to query DB"). $con->connect_error; 
+  $query = "select sum(RETURN) from $table";  
+  $result = $conn->query ($query);
+  if (!$result) die ("Unable to query DB (calReturn)"). $con->connect_error; 
   //print_r ($result);
   return $result->fetch_row()[0];
 }
