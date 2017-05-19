@@ -8,11 +8,13 @@ $profit = calProfit($conn);
 $totalSales = calTotalSalesNo($conn);
 $quantities = getQuantity($conn);
 $storeExpense = calStoreExpense($conn);
+$totalStoreExpense = calTotalStoreExpense($conn);
 //$returnNo = calReturn($conn);
 
 $Info = array();
 $Info['PROFIT'] = $profit;
 $Info['EXPENSE'] = $storeExpense;
+$Info['TOTAL EXPENSE'] = $totalStoreExpense;
 $Info['SALES'] = $totalSales;
 $Info['QUANTITIES'] = $quantities;
 //$Info['RETURN'] = $returnNo;
