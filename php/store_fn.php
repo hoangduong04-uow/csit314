@@ -1,13 +1,5 @@
 <?php 
 
-function calStoreExpense($conn) {
-  $query = "SELECT SUM(COST_OF_GOODS) AS COST, SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM STORE_DATA";
-  $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB"). $con->connect_error; 
-  $row = $result->fetch_assoc();
-  $expense = array('COST' => $row['COST'], 'FREIGHT' => $row['FREIGHT'], 'WAGES' => $row['WAGES'], 'OVERHEAD' => $row['OVERHEAD'] );
-  return $expense;
-}
 
 function connectDB() {
   define ('DBSERVER', 'localhost:3306');
@@ -31,6 +23,25 @@ function getQuantity($conn) {
     }
   }
   return $resultTable;
+}
+
+
+function calStoreExpense($conn) {
+  $query = "SELECT SUM(COST_OF_GOODS) AS COST, SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM STORE_DATA";
+  $result = $conn->query ($query);
+  if (!$result) die ("Unable to query DB"). $con->connect_error; 
+  $row = $result->fetch_assoc();
+  $expense = array('COST' => $row['COST'], 'FREIGHT' => $row['FREIGHT'], 'WAGES' => $row['WAGES'], 'OVERHEAD' => $row['OVERHEAD'] );
+  return $expense;
+}
+
+function calTotalStoreExpense($conn) {
+  $query = "SELECT SUM(COST_OF_GOODS) AS COST, SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM STORE_DATA";
+  $result = $conn->query ($query);
+  if (!$result) die ("Unable to query DB"). $con->connect_error; 
+  $row = $result->fetch_assoc();
+  $totalExpense = $row['COST']+$row['FREIGHT']+['WAGES']+$row['OVERHEAD'];
+  return $totalExpense;
 }
 
 ?>
