@@ -25,18 +25,45 @@ function calStatistics($conn, $storeName)
 	
 }
 
+ 
 
-/*
-function increaseProfits($conn)
+function reduceCosts($conn,$tname,$reducePrice)
 {
-   
-  $query = "select * from ".$tname." where ";
-  $result = execQuery($conn, $query, "calTotalStoreExpense");
-  $row = $result->fetch_assoc();
-  $totalExpense = $row['FREIGHT'] + $row['WAGES'] + $row['OVERHEAD'];
-  return $totalExpense;
+  
+  $query = "select * from ".$tname." where RETURN_ITEMS<2 AND CAST(PROFIT as INT)<(SELECT AVG(PROFIT) FROM ".$tname.")";
+  $result = execQuery($conn, $query, "reduceCosts");
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      print_r($row);
+    }
+  }
+  
 }
-*/
+
+function increasePrice($conn,$increasePrice)
+{
+  $query = "select * from ".$tname." where ";
+  $result = execQuery($conn, $query, "reduceCosts");
+  if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      print_r($row);
+    }
+  }
+}
+
+
+function reduceWorkforce($conn,$reduceNum)
+{
+	
+}
+
+
+function reduceReturns($conn,$reduceNum)
+{
+	
+}
+
+
 
 
 ?>
@@ -67,7 +94,7 @@ function increaseProfits($conn)
 <pre>
 <?php  
     //Manager dashboard is used as predictive tool:
-	
+	//reduceCosts($conn,"wollongong",0)
  
   
 ?>
