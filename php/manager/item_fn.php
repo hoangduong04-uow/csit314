@@ -13,12 +13,12 @@
   return $resultTable;
 }
  
-function calTotalSalesNo($conn,$tname)
+function calTotalSalesNo($conn, $tname)
 {
   // total number of sale
   $query = "select sum(SALECOUNT) from ".$tname;  
   $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB - calTotalSalesNo"). $con->connect_error; 
+  if (!$result) die ("Unable to query DB - calTotalSalesNo"). $conn->connect_error; 
   return $result->fetch_row()[0];
 }
 
@@ -37,7 +37,7 @@ function calReturn($conn,$tname)
   // total number of return
   $query = "select sum(RETURN_ITEMS) from ".$tname;  
   $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB - calReturn"). $con->connect_error; 
+  if (!$result) die ("Unable to query DB - calReturn"). $conn->connect_error; 
   //print_r ($result);
   return $result->fetch_row()[0];
 }

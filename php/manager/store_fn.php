@@ -1,5 +1,6 @@
 <?php 
 
+
 function connectDB() {
   define ('DBSERVER', 'localhost:3306');
   define ('DBUSER', 'root');
@@ -55,7 +56,7 @@ function execQuery($conn, $query, $fname) {
 
   // Execute query
   $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB - calStoreExpense"). $conn->connect_error; 
+  if (!$result) die ("Unable to query DB - ".$fname). $conn->connect_error; 
   return $result;
 }
 
