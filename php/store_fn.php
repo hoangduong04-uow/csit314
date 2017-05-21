@@ -11,18 +11,18 @@ function connectDB() {
 }
 
 function calStoreExpense($conn,$tname) {
-  $query = "SELECT SUM(COST_OF_GOODS) AS COST, SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
+  $query = "SELECT SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
   $result = execQuery($conn, $query, "calStoreExpense");
   $row = $result->fetch_assoc();
-  $expense = array('COST' => $row['COST'], 'FREIGHT' => $row['FREIGHT'], 'WAGES' => $row['WAGES'], 'OVERHEAD' => $row['OVERHEAD'] );
+  $expense = array('FREIGHT' => $row['FREIGHT'], 'WAGES' => $row['WAGES'], 'OVERHEAD' => $row['OVERHEAD'] );
   return $expense;
 }
 
 function calTotalStoreExpense($conn,$tname) {
-  $query = "SELECT SUM(COST_OF_GOODS) AS COST, SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
+  $query = "SELECT SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
   $result = execQuery($conn, $query, "calTotalStoreExpense");
   $row = $result->fetch_assoc();
-  $totalExpense = $row['COST'] + $row['FREIGHT'] + $row['WAGES'] + $row['OVERHEAD'];
+  $totalExpense = $row['FREIGHT'] + $row['WAGES'] + $row['OVERHEAD'];
   return $totalExpense;
 }
 
@@ -41,6 +41,7 @@ function calStoreReturn($conn, $tname) {
   $result = execQuery($conn, $query, "calStoreReturn");
   return $result->fetch_row()[0];
 }
+
 
 function execQuery($conn, $query, $fname) {
 
