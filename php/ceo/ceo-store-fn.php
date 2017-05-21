@@ -1,14 +1,5 @@
 <?php 
-
-function connectDB() {
-  define ('DBSERVER', 'localhost:3306');
-  define ('DBUSER', 'root');
-  define ('DBPASS','');
-  define ('DBNAME','csit314');
-  
-  $mysqli = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
-    return $mysqli;
-}
+  include_once('ceo-basic.php');
 
 function calStoreExpense($conn,$tname) {
   $query = "SELECT SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
@@ -51,12 +42,5 @@ function calStoreProfit($conn, $tname) {
 }
 
 
-function execQuery($conn, $query, $fname) {
-
-  // Execute query
-  $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB - calStoreExpense"). $conn->connect_error; 
-  return $result;
-}
 
 ?>
