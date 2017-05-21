@@ -12,13 +12,6 @@ $returnNo = calReturn($conn,"wollongong");
 $quantities = getQuantity($conn,"wollongong");
 $storeExpense = calStoreExpense($conn,"store_data_wollongong");
 $totalStoreExpense = calTotalStoreExpense($conn,"store_data_wollongong");
-=======
-$profit = calProfit($conn, $item_table);
-$totalSales = calTotalSalesNo($conn, $item_table);
-$quantities = getQuantity($conn, $item_table);
-$storeExpense = calStoreExpense($conn, $store_table);
-$totalStoreExpense = calTotalStoreExpense($conn, $store_table);
-//$totalReturn = calReturn($conn, $store_table);
 
 $Info = array();
 $Info['PROFIT'] = $profit;
