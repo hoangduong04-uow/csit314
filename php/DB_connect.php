@@ -6,6 +6,7 @@ include('item_fn.php');
 $allInfo = array();
 $conn = connectDB();
 
+
 function calAllInfo($conn,$cityName,$storeName)
 {
   // Items
@@ -18,12 +19,16 @@ function calAllInfo($conn,$cityName,$storeName)
 	$storeExpense = calStoreExpense($conn,$storeName);
 	$totalStoreExpense = calTotalStoreExpense($conn,$storeName);
 
+  // Add items details
 	$Info = array();
 	$Info['PROFIT'] = $profit;
 	$Info['SALESNO'] = $totalSalesNo;
 	$Info['RETURN'] = $returnNo;
+
+  //Add store details
 	$Info['EXPENSE'] = $storeExpense;
 	$Info['TOTAL EXPENSE'] = $totalStoreExpense;
+
 	// Quantities are too long
   //$Info['QUANTITIES'] = $quantities;
 	return $Info;

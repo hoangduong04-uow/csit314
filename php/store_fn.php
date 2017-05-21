@@ -12,8 +12,7 @@ function connectDB() {
 
 function calStoreExpense($conn,$tname) {
   $query = "SELECT SUM(COST_OF_GOODS) AS COST, SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
-  $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB - calStoreExpense"). $con->connect_error; 
+  $result = execQuery($conn, $query, "calStoreExpense");
   $row = $result->fetch_assoc();
   $expense = array('COST' => $row['COST'], 'FREIGHT' => $row['FREIGHT'], 'WAGES' => $row['WAGES'], 'OVERHEAD' => $row['OVERHEAD'] );
   return $expense;
@@ -21,11 +20,29 @@ function calStoreExpense($conn,$tname) {
 
 function calTotalStoreExpense($conn,$tname) {
   $query = "SELECT SUM(COST_OF_GOODS) AS COST, SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
-  $result = $conn->query ($query);
-  if (!$result) die ("Unable to query DB - calTotalStoreExpense"). $con->connect_error; 
+  $result = execQuery($conn, $query, "calTotalStoreExpense");
   $row = $result->fetch_assoc();
   $totalExpense = $row['COST'] + $row['FREIGHT'] + $row['WAGES'] + $row['OVERHEAD'];
   return $totalExpense;
+}
+
+function calStoreSale($conn, $tname) {
+
+  // Calculate the total sale of the store in a month
+  $query = "SELECT SUM(SALES) AS TOTALSALE FROM ".$tname;
+  $result = execQuery($conn, $query, "calStoreSale");
+  return $result->fetch_row()[0];
+}
+
+function calStoreReturn($conn) {}
+
+
+function execQuery($conn, $query, $fname) {
+
+  // Execute query
+  $result = $conn->query ($query);
+  if (!$result) die ("Unable to query DB - calStoreExpense"). $conn->connect_error; 
+  return $result;
 }
 
 ?>
