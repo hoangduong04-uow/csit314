@@ -34,8 +34,13 @@ function calStoreSale($conn, $tname) {
   return $result->fetch_row()[0];
 }
 
-function calStoreReturn($conn) {}
+function calStoreReturn($conn, $tname) {
 
+  // Calculate the total sale of the store in a month
+  $query = "SELECT SUM(RETURN) AS TOTALRETURN FROM ".$tname;
+  $result = execQuery($conn, $query, "calStoreReturn");
+  return $result->fetch_row()[0];
+}
 
 function execQuery($conn, $query, $fname) {
 
