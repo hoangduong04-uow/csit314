@@ -11,7 +11,6 @@ $conn = connectDB();
 function calAllInfo($conn,$cityName,$storeName)
 {
   // Items
-	$profit = calProfit($conn,$cityName);
 	$totalSalesNo = calTotalSalesNo($conn,$cityName);
 	$returnNo = calReturn($conn,$cityName);
 	$quantities = getQuantity($conn,$cityName);
@@ -19,19 +18,21 @@ function calAllInfo($conn,$cityName,$storeName)
   // Stores
 	$storeExpense = calStoreExpense($conn,$storeName);
 	$totalStoreExpense = calTotalStoreExpense($conn,$storeName);
+  $profit = calProfit($conn, $cityName);
 
   // Add items details
 	$Info = array();
 	$Info['PROFIT'] = $profit;
 	$Info['SALESNO'] = $totalSalesNo;
 	$Info['RETURN'] = $returnNo;
+  // Quantities are too long
+  //$Info['QUANTITIES'] = $quantities;
 
   //Add store details
 	$Info['EXPENSE'] = $storeExpense;
-	$Info['TOTAL EXPENSE'] = $totalStoreExpense;
+  $Info['TOTAL EXPENSE'] = $totalStoreExpense;
 
-	// Quantities are too long
-  //$Info['QUANTITIES'] = $quantities;
+
 	return $Info;
 	
 }
