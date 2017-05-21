@@ -20,6 +20,10 @@ function calStatistics($conn,$storeName)
 	$Info['CUSTOMERNO'] = $customerNo;
 	return $Info;
 	
+	
+	
+	
+	
 }
 
 
