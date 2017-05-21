@@ -3,6 +3,17 @@
 include('store_fn.php');
 include('item_fn.php');
 
+
+function connectDB() {
+  define ('DBSERVER', 'localhost:3306');
+  define ('DBUSER', 'root');
+  define ('DBPASS','root');
+  define ('DBNAME','csit314');
+  
+  $mysqli = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
+    return $mysqli;
+}
+
 $allInfo = array();
 $conn = connectDB();
 
