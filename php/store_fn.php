@@ -3,24 +3,11 @@
 function connectDB() {
   define ('DBSERVER', 'localhost:3306');
   define ('DBUSER', 'root');
-  define ('DBPASS','');
+  define ('DBPASS','root');
   define ('DBNAME','csit314');
   
   $mysqli = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
     return $mysqli;
-}
-
-function getQuantity($conn,$tname) {
-  // get the quantities of all the items
-  $query = "SELECT * FROM ".$tname;
-  $result = $conn->query ($query);
-  $resultTable = array();
-  if ($result->num_rows > 0) {
-    while($row = $result->fetch_assoc()) {
-      $resultTable[] = array('NAME' => $row['NAME'], 'QUANTITY' => $row['QUANTITY']);
-    }
-  }
-  return $resultTable;
 }
 
 function calStoreExpense($conn,$tname) {

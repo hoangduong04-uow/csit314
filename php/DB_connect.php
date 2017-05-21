@@ -6,29 +6,15 @@ include('item_fn.php');
 $allInfo = array();
 $conn = connectDB();
 
-/*
-$profit = calProfit($conn,"wollongong");
-$totalSalesNo = calTotalSalesNo($conn,"wollongong");
-$returnNo = calReturn($conn,"wollongong");
-$quantities = getQuantity($conn,"wollongong");
-$storeExpense = calStoreExpense($conn,"store_data_wollongong");
-$totalStoreExpense = calTotalStoreExpense($conn,"store_data_wollongong");
-
-$Info = array();
-$Info['PROFIT'] = $profit;
-$Info['SALESNO'] = $totalSalesNo;
-$Info['RETURN'] = $returnNo;
-$Info['EXPENSE'] = $storeExpense;
-$Info['TOTAL EXPENSE'] = $totalStoreExpense;
-//$Info['QUANTITIES'] = $quantities;
-*/
-
 function calAllInfo($conn,$cityName,$storeName)
 {
+  // Items
 	$profit = calProfit($conn,$cityName);
 	$totalSalesNo = calTotalSalesNo($conn,$cityName);
 	$returnNo = calReturn($conn,$cityName);
 	$quantities = getQuantity($conn,$cityName);
+
+  // Stores
 	$storeExpense = calStoreExpense($conn,$storeName);
 	$totalStoreExpense = calTotalStoreExpense($conn,$storeName);
 
@@ -38,7 +24,8 @@ function calAllInfo($conn,$cityName,$storeName)
 	$Info['RETURN'] = $returnNo;
 	$Info['EXPENSE'] = $storeExpense;
 	$Info['TOTAL EXPENSE'] = $totalStoreExpense;
-	//$Info['QUANTITIES'] = $quantities;
+	// Quantities are too long
+  //$Info['QUANTITIES'] = $quantities;
 	return $Info;
 	
 }
