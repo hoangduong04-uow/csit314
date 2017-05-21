@@ -3,6 +3,7 @@
 include('store_fn.php');
 include('item_fn.php');
 
+$allInfo = array();
 $conn = connectDB();
 
 /*
@@ -47,15 +48,17 @@ function calAllInfo($conn,$cityName,$storeName)
 <pre>
 <?php
 // Display everything here, put a pre tag around this to display all info
-  print_r(calAllInfo($conn,"wollongong","store_data_wollongong"));
-  print_r(calAllInfo($conn,"sydney","store_data_sydney"));
-  print_r(calAllInfo($conn,"shellharbour","store_data_shellharbour"));
-  print_r(calAllInfo($conn,"newcastle","store_data_newcastle"));
-  print_r(calAllInfo($conn,"melbourne","store_data_melbourne"));
-  print_r(calAllInfo($conn,"centralcoast","store_data_centralcoast"));
-  print_r(calAllInfo($conn,"canberra","store_data_canberra"));
-  print_r(calAllInfo($conn,"cairns","store_data_cairns"));
-  print_r(calAllInfo($conn,"brisbane","store_data_brisbane"));
-  print_r(calAllInfo($conn,"adelaide","store_data_adelaide"));
+  $allInfo['wollongong'] = calAllInfo($conn,"wollongong","store_data_wollongong");
+  $allInfo['sydney'] = calAllInfo($conn,"sydney","store_data_sydney");
+  $allInfo['shellhabour'] = calAllInfo($conn,"shellharbour","store_data_shellharbour");
+  $allInfo['newcastle'] = calAllInfo($conn,"newcastle","store_data_newcastle");
+  $allInfo['melbourne'] = calAllInfo($conn,"melbourne","store_data_melbourne");
+  $allInfo['centralcoast'] = calAllInfo($conn,"centralcoast","store_data_centralcoast");
+  $allInfo['canberra'] = calAllInfo($conn,"canberra","store_data_canberra");
+  $allInfo['cairns'] = calAllInfo($conn,"cairns","store_data_cairns");
+  $allInfo['brisbane'] = calAllInfo($conn,"brisbane","store_data_brisbane");
+  $allInfo['adelaide'] = calAllInfo($conn,"adelaide","store_data_adelaide");
+  
+  print_r($allInfo);
 ?>
 </pre>
