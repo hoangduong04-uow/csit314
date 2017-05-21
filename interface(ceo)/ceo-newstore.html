@@ -77,19 +77,34 @@
 		    b = 151.179600;
 			c = 15;
 			initialize();
+			displayPrediction(loc);
 		  } else if (loc == 'hurstville'){
 		    a = -33.966667;
 		    b = 151.100000;
 			c = 15;
 			initialize();
+			displayPrediction(loc);
 		  } else if (loc == 'kiama') {
 		    a = -34.673822;
 		    b = 150.844371;
 			c = 15;
 			initialize();
+			displayPrediction(loc);
 		  } 
 		}
-
+        
+		function displayPrediction(loc) {
+		    
+		  
+		  var prediction;
+		  prediction = "<br/>";
+		  prediction = prediction + "Hello this is predcition";
+		  
+		  document.getElementById("prediction").innerHTML = (loc) + prediction;
+		
+		
+		
+		}
 
 
 		
@@ -209,27 +224,37 @@
 								  <!--/.col-->
 								<div class="col-sm-12 col-lg-4">
 								   <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;border-left:solid #fdfefe;">
-                               	      <div style="margin-left:25px;">
+                               	      <div style="margin-left:10px;">
+									  
+									  
 									  <div class="dropdown">
                                       <div id="myDropdown" class="dropdown-content">
-                                      <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">
+                                    <!--  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+									    
                                         <a href="#chatswood" id="chatswood" onClick="displayLocation('chatswood')" >Chatswood</a>
                                         <a href="#hurstville" id="hurstville" onClick="displayLocation('hurstville')">Hurstville</a>
                                         <a href="#kiama"id="kiama" onClick="displayLocation('kiama')" >Kiama</a>          
                                     </div>
                                     </div>
 									  
+									  <br/>
+									  <br/>
+									  <br/>
+									  <br/>
+									  <br/>
+									  <br/>
+									  <br/>
 									  
-									  
+									  <div id="prediction"></div>
 									  </div>
 															
 								   </div>
-								
+								   
 								</div>
 								<div class="col-sm-12 col-lg-4">
 								   <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;">
-								    <div style="margin-left:25px;">
-								      <div id="prediction"></div>
+								    <div style="margin-left:10px;">
+								      
 								    </div>
 								   </div>
 								</div>
