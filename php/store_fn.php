@@ -1,5 +1,15 @@
 <?php 
 
+function connectDB() {
+  define ('DBSERVER', 'localhost:3306');
+  define ('DBUSER', 'root');
+  define ('DBPASS','root');
+  define ('DBNAME','csit314');
+  
+  $mysqli = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
+    return $mysqli;
+}
+
 function calStoreExpense($conn,$tname) {
   $query = "SELECT SUM(COST_OF_GOODS) AS COST, SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
   $result = execQuery($conn, $query, "calStoreExpense");
