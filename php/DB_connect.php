@@ -53,5 +53,8 @@ function calAllInfo($conn,$cityName,$storeName)
   $allInfo['adelaide'] = calAllInfo($conn,"adelaide","store_data_adelaide");
   
   print_r($allInfo);
+  
+  
+  
 ?>
 </pre>
