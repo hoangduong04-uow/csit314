@@ -1,8 +1,15 @@
 <?php
- include('ceo-basic.php');
+ include('../php/ceo/ceo-basic.php');
 
  $conn = connectDB();
+ $user_table = 'users';
 
+ if(isset($_POST['login'])) {
+    $user = $_POST['username'];
+    $pwd = $_POST['password'];
+
+    //echo $user, $pwd;
+ }
  
 
 ?>
@@ -45,16 +52,16 @@
                             <div class="input-group mb-1">
                                 <span class="input-group-addon"><i class="icon-user"></i>
                                 </span>
-                                <input type="text" class="form-control" placeholder="Username">
+                                <input type="text" class="form-control" id="username" name="username" placeholder="Username">
                             </div>
                             <div class="input-group mb-2">
                                 <span class="input-group-addon"><i class="icon-lock"></i>
                                 </span>
-                                <input type="password" class="form-control" placeholder="Password">
+                                <input type="password" class="form-control" id="password" name="password" placeholder="Password">
                             </div>
                             <div class="row">
                                 <div class="col-6">
-                                    <button type="submit" class="btn btn-primary px-2">Login</button>
+                                    <button type="submit" name="login" class="btn btn-primary px-2">Login</button>
                                 </div>
                                 <div class="col-6 text-right">
                                     <button type="button" class="btn btn-link px-0">Forgot password?</button>
