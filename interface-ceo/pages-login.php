@@ -8,7 +8,7 @@
     $user = $_POST['username'];
     $pwd = $_POST['password'];
 
-    //echo $user, $pwd;
+    $query = "SELECT TYPE FROM $user_table WHERE USER=\"".$user."\" AND PWD=\"".$pwd."\"";
  }
  
 
