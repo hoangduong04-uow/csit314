@@ -3,12 +3,30 @@
 
  $conn = connectDB();
  $user_table = 'users';
+ $wrong_user = false;
 
  if(isset($_POST['login'])) {
     $user = $_POST['username'];
     $pwd = $_POST['password'];
 
-    $query = "SELECT TYPE FROM $user_table WHERE USER=\"".$user."\" AND PWD=\"".$pwd."\"";
+    $query = "SELECT TYPE FROM $user_table WHERE ER=\"".$user."\" AND PWD=\"".$pwd."\"";
+    $result = execQuery($conn, $query, "login");
+
+    // Check if query return any user type
+    if(mysqli_num_rows($result)>0) {
+        $type = $result->fetch_row()[0];
+    }
+    else {
+        $wrong_user = true;
+    }
+
+    // Direct to corresponding page according to the user type
+    if ($type == "CEO") {
+        header('Location: ./ceo-index.php');
+    }
+    else if ($type == "MANAGER") {
+        header('Location: ../interface-manager/manager-pages-login.html');
+    }
  }
  
 
@@ -48,6 +66,12 @@
                         <div class="card-block">
                             <h1>Login</h1>
                             <p class="text-muted">Sign In to your account</p>
+                            <?php
+                              if($wrong_user) {
+                                echo "<p class=\"text-muted\">Wrong user!</p>";
+                              }
+                            ?>
+                            
                             <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                             <div class="input-group mb-1">
                                 <span class="input-group-addon"><i class="icon-user"></i>
