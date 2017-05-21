@@ -107,13 +107,11 @@
         
             </ol>
 
-			<div id="map-canvas"></div>
+	<!--  Population Map  -->		
+
+		
+		
 			<div class="container-fluid">
-
-
-
-
-
                 <div class="animated fadeIn">
   
                     <!--/.row-->
@@ -128,26 +126,17 @@
                                 <!--/.col-->
                                 <div class="col-sm-7 hidden-sm-down">
                                     
-                                    </button>
+                                    
                                     <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
-                                        <div class="btn-group mr-1" data-toggle="buttons" aria-label="First group">
-                                            <label class="btn btn-outline-secondary">
-                                                <input type="radio" name="options" id="option1" checked>Day
-                                            </label>
-                                            <label class="btn btn-outline-secondary active">
-                                                <input type="radio" name="options" id="option2" >Month
-                                            </label>
-                                            <label class="btn btn-outline-secondary">
-                                                <input type="radio" name="options" id="option3">Year
-                                            </label>
-                                        </div>
+                                        
                                     </div>
                                 </div>
+								
                                 <!--/.col-->
                             </div>
                             <!--/.row-->
-                            <div class="chart-wrapper" style="height:300px;margin-top:40px;">
-                                <canvas id="main-chart" class="chart" height="300"></canvas>
+                            <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;">
+                               	<div id="map-canvas"></div>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -220,6 +209,7 @@
 
     <!-- Custom scripts required by this view -->
     <script src="js/views/main.js"></script>
+	<script src="js/date.js"></script>
 
 </body>
 
