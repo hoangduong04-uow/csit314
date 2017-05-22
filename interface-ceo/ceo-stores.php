@@ -57,10 +57,10 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="ceo-index.html"><i class="icon-star"></i> Summary </a>
+                        <a class="nav-link" href="ceo-index.php"><i class="icon-star"></i> Summary </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-stores.html"><i class="icon-star"></i> Stores </a>
+                        <a class="nav-link" href="ceo-stores.php"><i class="icon-star"></i> Stores </a>
                     </li>
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link" href="ceo-newstore.html"><i class="icon-star"></i> Open New Store</a>
@@ -113,7 +113,7 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="callout callout-info">
-                                                        <small class="text-muted">Sales</small>
+                                                        <small class="text-muted">Last month sales</small>
                                                         <br>
                                                         <strong class="h4">$<?php echo $allInfo[$city]['SALESNO']; ?></strong>
                                                         <div class="chart-wrapper">
@@ -184,9 +184,9 @@
                                             <div class="row">
                                                 <div class="col-sm-6">
                                                     <div class="callout callout-warning">
-                                                        <small class="text-muted">Customer Gender</small>
+                                                        <small class="text-muted">Customers</small>
                                                         <br>
-                                                        <strong class="h4">78,623</strong>
+                                                        <strong class="h4"><?php echo rand(1000, 5000) ;?></strong>
                                                         <div class="chart-wrapper">
                                                             <canvas id="sparkline-chart-3" width="100" height="30"></canvas>
                                                         </div>
@@ -201,20 +201,20 @@
                                                 <li>
                                                     <i class="icon-user"></i>
                                                     <span class="title">Male</span>
-                                                    <span class="value">43%</span>
+                                                    <span class="value"><?php echo $male = rand(1,100) ?>%</span>
                                                     <div class="bars">
                                                         <div class="progress progress-xs">
-                                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo $male; ?>%" aria-valuenow="<?php echo $male; ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </div>
                                                 </li>
                                                 <li>
                                                     <i class="icon-user-female"></i>
                                                     <span class="title">Female</span>
-                                                    <span class="value">37%</span>
+                                                    <span class="value"><?php echo 100 - $male;?>%</span>
                                                     <div class="bars">
                                                         <div class="progress progress-xs">
-                                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 37%" aria-valuenow="37" aria-valuemin="0" aria-valuemax="100"></div>
+                                                            <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo 100 - $male;?>%" aria-valuenow="<?php echo 100 - $male;?>" aria-valuemin="0" aria-valuemax="100"></div>
                                                         </div>
                                                     </div>
                                                 </li>
