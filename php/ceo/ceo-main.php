@@ -5,6 +5,7 @@
   include_once('ceo-basic.php');
 
   $conn = connectDB();
+  $allInfo = array();
 
   foreach ($store_list as $item => $store) {
     $allInfo[$item] = calAllInfo($conn,$item,$store);

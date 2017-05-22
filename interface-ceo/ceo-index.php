@@ -1,6 +1,8 @@
+<pre>
 <?php
-    include('../php/DB_connect.php');
+    include('../php/ceo/ceo-main.php');
 ?>
+</pre>
 
 <!DOCTYPE html>
 <html lang="en">
