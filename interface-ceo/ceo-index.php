@@ -75,7 +75,7 @@
                     </li>
                     <li class="nav-item nav-dropdown">
                     <!-- CHANGE THIS AT THE FINAL ceo-storemanagement -->
-                        <a class="nav-link" href="ceo-storemanagement.html"><i class="icon-star"></i> Store Management</a>
+                        <a class="nav-link" href="ceo-newstore.html"><i class="icon-star"></i> Store Management</a>
                     </li>
 
                 </ul>
