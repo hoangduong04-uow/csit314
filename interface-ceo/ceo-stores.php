@@ -1,3 +1,8 @@
+<?php
+    include('../php/ceo/ceo-main.php');
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -71,7 +76,7 @@
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Home</li>
-                <li class="breadcrumb-item"><a href="#">CEO</a>
+                <li class="breadcrumb-item"><a href="./ceo-index.php">CEO</a>
                 </li>
                 <li class="breadcrumb-item active">Stores</li>
 
