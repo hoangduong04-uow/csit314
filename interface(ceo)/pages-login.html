@@ -1,3 +1,42 @@
+<<<<<<< HEAD:interface(ceo)/pages-login.html
+=======
+<?php
+ include('../php/ceo/ceo-basic.php');
+
+ $conn = connectDB();
+ $user_table = 'users';
+ $wrong_user = false;
+
+ if(isset($_POST['login'])) {
+    $user = $_POST['username'];
+    $pwd = $_POST['password'];
+
+    $query = "SELECT TYPE, LOCATION FROM $user_table WHERE USER=\"".$user."\" AND PWD=\"".$pwd."\"";
+    $result = execQuery($conn, $query, "login");
+
+    // Check if query return any user type
+    if(mysqli_num_rows($result)>0) {
+        $type = $result->fetch_assoc()['TYPE'];
+        $location = ucfirst($result->fetch_assoc()['LOCATION']);
+    }
+    else {
+        $wrong_user = true;
+    }
+
+    // Direct to corresponding page according to the user type
+    if ($type == "CEO") {
+        header('Location: ./ceo-index.php');
+    }
+    else if ($type == "MANAGER") {
+        echo $location."///////";
+        header("Location: ../interface-manager/$location-manager-index.html");
+    }
+ }
+ 
+
+?>
+
+>>>>>>> def1b4977b0dfdcc1834a200526f0e5e64f92fcb:interface-ceo/pages-login.php
 
 <!DOCTYPE html>
 <html lang="en">

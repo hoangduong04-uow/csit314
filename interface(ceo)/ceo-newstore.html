@@ -28,8 +28,64 @@
                                map: map,
                                title: 'My Place!'
             });
+<<<<<<< HEAD:interface(ceo)/ceo-newstore.html
         }    
 </script>
+=======
+        } 
+
+        function setLoc() {
+		
+		   var loc = document.getElementById(myLocation).value;
+		   alert(document.getElementById(myLocation));
+		   displayLocation(loc);
+		
+		}
+		
+		
+        function displayLocation(loc) {
+		  document.getElementById("err").innerHTML ="";
+		  if (loc == 'chatswood'){
+		    a = -33.800770;
+		    b = 151.179600;
+			c = 15;
+			initialize();
+			displayPrediction(loc);
+		  } else if (loc == 'hurstville'){
+		    a = -33.966667;
+		    b = 151.100000;
+			c = 15;
+			initialize();
+			displayPrediction(loc);
+		  } else if (loc == 'kiama') {
+		    a = -34.673822;
+		    b = 150.844371;
+			c = 15;
+			initialize();
+			displayPrediction(loc);
+		  } else {
+		    document.getElementById("err").innerHTML = "There is no matching information."
+		  }
+		}
+        
+		function displayPrediction(loc) {
+
+		  var prediction;
+		  prediction = "<br/>";
+		  prediction = prediction + "Hello this is predcition";
+		  
+		  document.getElementById("prediction").innerHTML = (loc) + prediction;
+		}
+        
+		function displayTitle() {
+		  
+		  document.getElementById("find").innerHTML = "Find a location to open store";
+		
+		}
+
+		
+    </script>
+>>>>>>> def1b4977b0dfdcc1834a200526f0e5e64f92fcb:interface-ceo/ceo-newstore.html
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -145,9 +201,58 @@
                                 </div>
                                 <!--/.col-->
                             </div>
+							
                             <!--/.row-->
+<<<<<<< HEAD:interface(ceo)/ceo-newstore.html
                             <div class="chart-wrapper" style="height:300px;margin-top:40px;">
                                 <canvas id="main-chart" class="chart" height="300"></canvas>
+=======
+
+							<div class="row">
+							      <!--/.col-->
+                                <div class="col-sm-12 col-lg-4">
+                                   <div class="chart-wrapper" style="height:550px;margin-top:25px;margin-bottom:25px;">
+								      
+								      <input type="text" id="myLocation"/><button onclick="setLoc()">Search</button>
+									
+									
+									  <br /><br />
+									    <div id="err"> </div>
+                               	      <div id="map-canvas"></div>
+								   </div>
+								</div>
+								  <!--/.col-->
+								<div class="col-sm-12 col-lg-4">
+								   <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;border-left:solid #fdfefe;">
+                               	      <div style="margin-left:10px;">
+									  
+								<!-- DROP DOWN MENU  
+									  <div class="dropdown">
+                                      <div id="myDropdown" class="dropdown-content">
+                                       <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> 
+									    
+                                        <a href="#chatswood" id="chatswood" onClick="displayLocation('chatswood')" >Chatswood</a>
+                                        <a href="#hurstville" id="hurstville" onClick="displayLocation('hurstville')">Hurstville</a>
+                                        <a href="#kiama"id="kiama" onClick="displayLocation('kiama')" >Kiama</a>          
+                                    </div>
+                                    </div> -->
+									  
+								  
+									  <div id="prediction"></div>
+									  </div>
+															
+								   </div>
+								   
+								</div>
+								<div class="col-sm-12 col-lg-4">
+								   <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;">
+								    <div style="margin-left:10px;">
+								      
+								    </div>
+								   </div>
+								</div>
+								
+>>>>>>> def1b4977b0dfdcc1834a200526f0e5e64f92fcb:interface-ceo/ceo-newstore.html
                             </div>
                         </div>
                         <div class="card-footer">

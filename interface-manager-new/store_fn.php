@@ -65,7 +65,7 @@ function calStoreReturnDay($conn, $tname)
     // output data of each row
     while($row = $result->fetch_assoc())
 	{
-	  $returnNoDay[]= $row['RETURN'];
+	  $returnNoDay[]= $row['RETURN_ITEMS'];
 	}
   }
   return $returnNoDay;

@@ -2761,7 +2761,7 @@ header.navbar {
     padding: 0.5rem 1rem;
     margin-right: 0;
     background-color: #fff;
-    background-image: url("https://upload.wikimedia.org/wikipedia/en/thumb/c/cd/JB-Hi-Fi-brand.svg/1280px-JB-Hi-Fi-brand.svg.png");
+    background-image: url("../img/jblogo.png");
     background-repeat: no-repeat;
     background-position: center center;
     background-size: 70px auto;
@@ -6462,6 +6462,7 @@ app-root {
         text-decoration: none;
         background: transparent; }
         .sidebar .nav .nav-item .nav-link:hover, .sidebar .nav .nav-item .navbar .dropdown-toggle:hover, .navbar .sidebar .nav .nav-item .dropdown-toggle:hover {
+		 display: block;
           color: #fff !important;
           background: #20a8d8 !important; }
           .sidebar .nav .nav-item .nav-link:hover i, .sidebar .nav .nav-item .navbar .dropdown-toggle:hover i, .navbar .sidebar .nav .nav-item .dropdown-toggle:hover i {
