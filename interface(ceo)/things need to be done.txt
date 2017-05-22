@@ -1,0 +1,15 @@
+
+1. When the  Monthly SALES below $15000 the store has to be closed
+
+2. Potential Candidates for opening new store
+  
+  Perth -31.950527   115.860457
+  Gold Coast  -28.016667     153.400000
+  Chatswood   -33.800770    151.179600
+  Kiama   -34.673822   150.844371
+  Cronulla   -34.057440    151.152190
+  Port Kembla   -34.485392    150.899579
+  Strathfield -33.880810      151.083080
+  Hurstville -33.966667    151.100000
+  
+  
