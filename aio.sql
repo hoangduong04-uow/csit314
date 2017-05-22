@@ -963,7 +963,7 @@ INSERT INTO `wollongong` (`NAME`, `TYPE`, `CODE`, `SELLING_PRICE`, `QUANTITY`, `
 ('Sony X8500D 65\" 4K UHD HDR Android Smart LED LCD TV', 'TV', 'KD65X8500D', '2796', 64, '24', '67104', 2327, '11256', 1),
 ('Samsung UA75JU6400W 75\" 4K UHD Smart LED LCD TV', 'TV', 'UA75JU6400WXXY', '3698', 15, '11', '40678', 2857, '9251', 5),
 ('Soniq S70UV16A 70\" UHD Smart LED LCD TV', 'TV', 'S70UV16A-AU', '1799', 18, '10', '17990', 1593, '2060', 1),
-('Sony Bravia 85\" 4K HDR UHD LED LCD TV', 'TV', 'KD85X8500D', '9998', 50, '30', '299940', 7269, '81870', 3),
+('Sony Bravia 85\" 4K HDR UHD LED LCD TV', 'TV', 'KD85X8500D', '9998', 50, '30', '29994', 7269, '8187', 3),
 ('Sony X9300D 65\" 4K UHD HDR Android Smart LED LCD TV', 'TV', 'KD65X9300D', '3998', 38, '28', '111944', 3162, '23408', 5),
 ('Samsung Galaxy S8 64GB (Black)', 'Mobile phone', '1091003347', '1199', 84, '29', '34771', 914, '8265', 2),
 ('Sony Xperia XZ (Black)', 'Mobile phone', '1071000647', '899', 66, '23', '20677', 681, '5014', 4),
