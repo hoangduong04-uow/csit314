@@ -11,6 +11,8 @@ function connectDB() {
    return $mysqli;
 }
 
+
+
 function calStoreExpense($conn,$tname) {
   $query = "SELECT SUM(FREIGHT_COSTS) AS FREIGHT, SUM(WAGES) AS WAGES, SUM(OVERHEAD) AS OVERHEAD FROM ".$tname;
   $result = execQuery($conn, $query, "calStoreExpense");
@@ -35,6 +37,18 @@ function calStoreSale($conn, $tname) {
   return $result->fetch_row()[0];
 }
 
+function calStoreSaleDay($conn, $tname)
+{
+  $query = "SELECT SUM(SALECOUNT) FROM ".$tname;
+  $result = execQuery($conn, $query, "calStoreSaleDay");
+  $totalSaleNo=$result->fetch_row()[0];
+  for($i=0;$i<29;$i++)
+  {
+	  $salesNoDay[]= rand(($totalSaleNo/29)/2,($totalSaleNo/29));
+  }
+  return $salesNoDay;
+}
+
 function calStoreReturn($conn, $tname) {
 
   // Calculate the total sale of the store in a month
@@ -42,6 +56,21 @@ function calStoreReturn($conn, $tname) {
   $result = execQuery($conn, $query, "calStoreReturn");
   return $result->fetch_row()[0];
 }
+
+function calStoreReturnDay($conn, $tname)
+{
+  $query = "SELECT * FROM ".$tname;
+  $result = execQuery($conn, $query, "calStoreReturnDay");
+  if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc())
+	{
+	  $returnNoDay[]= $row['RETURN'];
+	}
+  }
+  return $returnNoDay;
+}
+
 
 function calStoreProfit($conn, $tname) {
 

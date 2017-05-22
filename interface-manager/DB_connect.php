@@ -26,11 +26,12 @@ function calAllInfo($conn,$cityName,$storeName)
 	$Info['SALESNO'] = $totalSalesNo;
 	$Info['RETURN'] = $returnNo;
   // Quantities are too long
-  //$Info['QUANTITIES'] = $quantities;
+	$Info['QUANTITIES'] = $quantities;
+	$Info['TOTALQUANTITIES']=getTotalQuantity($conn,$cityName);
 
   //Add store details
 	$Info['EXPENSE'] = $storeExpense;
-  $Info['TOTAL EXPENSE'] = $totalStoreExpense;
+    $Info['TOTAL EXPENSE'] = $totalStoreExpense;
 
 
 	return $Info;
@@ -43,7 +44,7 @@ function calAllInfo($conn,$cityName,$storeName)
 // Display everything here, put a pre tag around this to display all info
   $allInfo['wollongong'] = calAllInfo($conn,"wollongong","store_data_wollongong");
   $allInfo['sydney'] = calAllInfo($conn,"sydney","store_data_sydney");
-  $allInfo['shellhabour'] = calAllInfo($conn,"shellharbour","store_data_shellharbour");
+  $allInfo['shellharbour'] = calAllInfo($conn,"shellharbour","store_data_shellharbour");
   $allInfo['newcastle'] = calAllInfo($conn,"newcastle","store_data_newcastle");
   $allInfo['melbourne'] = calAllInfo($conn,"melbourne","store_data_melbourne");
   $allInfo['centralcoast'] = calAllInfo($conn,"centralcoast","store_data_centralcoast");
