@@ -4,8 +4,13 @@
     //print_r($allInfo);
 
     $totalStoreSales = 0;
+    $totalStoreReturn = 0;
+    $totalStoreExpense = 0;
+
     foreach ($allInfo as $store) {
         $totalStoreSales += $store['SALESNO'];
+        $totalStoreReturn += $store['RETURN'];
+        $totalStoreExpense += $store['TOTAL EXPENSE'];
     }
 ?>
 </pre>
@@ -119,8 +124,8 @@
                                 <div class="card-block pb-0">
                                 <!-- Return function goes here-->
                                  
-                                    <h4 class="mb-0"><?php echo $totalReturn ?></h4>
-                                    <p>Item Returns</p>
+                                    <h4 class="mb-0"><?php echo $totalStoreReturn ?></h4>
+                                    <p>Item Returned</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
                                     <canvas id="card-chart2" class="chart" height="70"></canvas>
