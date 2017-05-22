@@ -27,15 +27,15 @@ function calStoreSale($conn, $tname) {
 
 function calStoreReturn($conn, $tname) {
 
-  // Calculate the total sale of the store in a month
-  $query = "SELECT SUM(RETURN) AS TOTALRETURN FROM ".$tname;
-  $result = execQuery($conn, $query, "calStoreReturn");
+  // Calculate the total return of the store in a month
+  $query = "SELECT SUM(RETURN_ITEMS) AS TOTALRETURN FROM ".$tname;
+  $result = execQuery($conn, $query, "calStoreReturn - $tname");
   return $result->fetch_row()[0];
 }
 
 function calStoreProfit($conn, $tname) {
 
-  // Calculate the total sale of the store in a month
+  // Calculate the total profit of the store in a month
   $query = "SELECT SUM(PROFIT) AS TOTALPROFIT FROM ".$tname;
   $result = execQuery($conn, $query, "calStoreProfit");
   return $result->fetch_row()[0];  

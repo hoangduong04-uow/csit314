@@ -1,5 +1,16 @@
 <?php
-    include('../php/DB_connect.php');
+    include('../php/ceo/ceo-main.php');
+    //print_r($allInfo);
+
+    $totalStoreSales = 0;
+    $totalStoreReturn = 0;
+    $totalStoreExpense = 0;
+
+    foreach ($allInfo as $store) {
+        $totalStoreSales += $store['SALESNO'];
+        $totalStoreReturn += $store['RETURN'];
+        $totalStoreExpense += $store['TOTAL EXPENSE'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -31,7 +42,7 @@
 <body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden">
     <header class="app-header navbar">
         <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">☰</button>
-        <a class="navbar-brand" href="#"></a>
+        <a class="navbar-brand" href="ceo-index.php"></a>
         <ul class="nav navbar-nav ml-auto">
             
            
@@ -57,12 +68,13 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="ceo-index.html"><i class="icon-star"></i> Summary </a>
+                        <a class="nav-link" href="ceo-index.php"><i class="icon-star"></i> Summary </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-stores.html"><i class="icon-star"></i> Stores </a>
+                        <a class="nav-link" href="ceo-stores.php"><i class="icon-star"></i> Stores </a>
                     </li>
                     <li class="nav-item nav-dropdown">
+                    <!-- CHANGE THIS AT THE FINAL ceo-storemanagement -->
                         <a class="nav-link" href="ceo-storemanagement.html"><i class="icon-star"></i> Store Management</a>
                     </li>
 
@@ -76,7 +88,7 @@
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Home</li>
-                <li class="breadcrumb-item"><a href="#">CEO</a>
+                <li class="breadcrumb-item"><a href="ceo-index.php">CEO</a>
                 </li>
                 <li class="breadcrumb-item active">Summary</li>
 
@@ -96,7 +108,7 @@
                             <div class="card card-inverse card-primary">
                                 <div class="card-block pb-0">
                                 <!-- Sales function goes here-->
-                                    <h4 class="mb-0"><?php echo $totalSales ?></h4>
+                                    <h4 class="mb-0"><?php echo $totalStoreSales ?></h4>
                                     <p>Number of sales</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
@@ -111,8 +123,8 @@
                                 <div class="card-block pb-0">
                                 <!-- Return function goes here-->
                                  
-                                    <h4 class="mb-0"><?php echo $totalReturn ?></h4>
-                                    <p>Item Returns</p>
+                                    <h4 class="mb-0"><?php echo $totalStoreReturn ?></h4>
+                                    <p>Item Returned</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
                                     <canvas id="card-chart2" class="chart" height="70"></canvas>
