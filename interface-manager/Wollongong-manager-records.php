@@ -409,7 +409,7 @@
 													echo "<td>".$storesInfo[$i]['WAGES']."</td>";
 													echo "<td>".$storesInfo[$i]['OVERHEAD']."</td>";
 													echo "<td>".$storesInfo[$i]['SALES']."</td>";
-													echo "<td>".$storesInfo[$i]['RETURN']."</td>";
+													echo "<td>".$storesInfo[$i]['RETURN_ITEMS']."</td>";
 													echo "<td>".$storesInfo[$i]['PROFIT']."</td>";											
 													echo "</tr>";
 												}
