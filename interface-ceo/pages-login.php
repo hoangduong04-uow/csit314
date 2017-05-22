@@ -9,12 +9,13 @@
     $user = $_POST['username'];
     $pwd = $_POST['password'];
 
-    $query = "SELECT TYPE FROM $user_table WHERE ER=\"".$user."\" AND PWD=\"".$pwd."\"";
+    $query = "SELECT TYPE, LOCATION FROM $user_table WHERE USER=\"".$user."\" AND PWD=\"".$pwd."\"";
     $result = execQuery($conn, $query, "login");
 
     // Check if query return any user type
     if(mysqli_num_rows($result)>0) {
-        $type = $result->fetch_row()[0];
+        $type = $result->fetch_assoc()['TYPE'];
+        $location = ucfirst($result->fetch_assoc()['LOCATION']);
     }
     else {
         $wrong_user = true;
@@ -25,7 +26,8 @@
         header('Location: ./ceo-index.php');
     }
     else if ($type == "MANAGER") {
-        header('Location: ../interface-manager/manager-pages-login.html');
+        echo $location."///////";
+        header("Location: ../interface-manager/$location-manager-index.html");
     }
  }
  
