@@ -52,7 +52,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                     
-                    <span class="hidden-md-down">Wollongong Manager</span>
+                    <span class="hidden-md-down">wollongong Manager</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
 
