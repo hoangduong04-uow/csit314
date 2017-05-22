@@ -1,6 +1,12 @@
 <pre>
 <?php
     include('../php/ceo/ceo-main.php');
+    //print_r($allInfo);
+
+    $totalStoreSales = 0;
+    foreach ($allInfo as $store) {
+        $totalStoreSales += $store['SALESNO'];
+    }
 ?>
 </pre>
 
@@ -98,7 +104,7 @@
                             <div class="card card-inverse card-primary">
                                 <div class="card-block pb-0">
                                 <!-- Sales function goes here-->
-                                    <h4 class="mb-0"><?php echo $totalSales ?></h4>
+                                    <h4 class="mb-0"><?php echo $totalStoreSales ?></h4>
                                     <p>Number of sales</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
