@@ -70,8 +70,17 @@
             });
         } 
 
-
+        function setLoc() {
+		
+		   var loc = document.getElementById(myLocation).;
+		   alert(document.getElementById(myLocation));
+		   displayLocation(loc);
+		
+		}
+		
+		
         function displayLocation(loc) {
+		  document.getElementById("err").innerHTML ="";
 		  if (loc == 'chatswood'){
 		    a = -33.800770;
 		    b = 151.179600;
@@ -90,22 +99,25 @@
 			c = 15;
 			initialize();
 			displayPrediction(loc);
-		  } 
+		  } else {
+		    document.getElementById("err").innerHTML = "There is no matching information."
+		  }
 		}
         
 		function displayPrediction(loc) {
-		    
-		  
+
 		  var prediction;
 		  prediction = "<br/>";
 		  prediction = prediction + "Hello this is predcition";
 		  
 		  document.getElementById("prediction").innerHTML = (loc) + prediction;
-		
-		
+		}
+        
+		function displayTitle() {
+		  
+		  document.getElementById("find").innerHTML = "Find a location to open store";
 		
 		}
-
 
 		
     </script>
@@ -160,10 +172,10 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="ceo-index.html"><i class="icon-star"></i> Summary </a>
+                        <a class="nav-link" href="ceo-index.php"><i class="icon-star"></i> Summary </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-stores.html"><i class="icon-star"></i> Stores </a>
+                        <a class="nav-link" href="ceo-stores.php"><i class="icon-star"></i> Stores </a>
                     </li>
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link" href="ceo-storemanagement.html"><i class="icon-star"></i> Open New Store</a>
@@ -213,11 +225,19 @@
 								
                                 <!--/.col-->
                             </div>
+							
                             <!--/.row-->
+
 							<div class="row">
 							      <!--/.col-->
                                 <div class="col-sm-12 col-lg-4">
-                                   <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;">
+                                   <div class="chart-wrapper" style="height:600px;margin-top:25px;margin-bottom:25px;">
+								      
+								      <input type="text" id="myLocation"/><button onclick="setLoc()">Search</button>
+									
+									
+									  <br /><br />
+									    <div id="err"> </div>
                                	      <div id="map-canvas"></div>
 								   </div>
 								</div>
@@ -226,25 +246,18 @@
 								   <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;border-left:solid #fdfefe;">
                                	      <div style="margin-left:10px;">
 									  
-									  
+								<!-- DROP DOWN MENU  
 									  <div class="dropdown">
                                       <div id="myDropdown" class="dropdown-content">
-                                    <!--  <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> -->
+                                       <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> 
 									    
                                         <a href="#chatswood" id="chatswood" onClick="displayLocation('chatswood')" >Chatswood</a>
                                         <a href="#hurstville" id="hurstville" onClick="displayLocation('hurstville')">Hurstville</a>
                                         <a href="#kiama"id="kiama" onClick="displayLocation('kiama')" >Kiama</a>          
                                     </div>
-                                    </div>
+                                    </div> -->
 									  
-									  <br/>
-									  <br/>
-									  <br/>
-									  <br/>
-									  <br/>
-									  <br/>
-									  <br/>
-									  
+								  
 									  <div id="prediction"></div>
 									  </div>
 															

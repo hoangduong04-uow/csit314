@@ -67,8 +67,6 @@ function reduceReturns($conn,$reduceNum)
 ?>
 
 
-<pre>
-
 <?php  
     //Manager dashboard shows the statistics for their store
   $allStatistics['managerStatWollongong']=calStatistics($conn,"wollongong");
@@ -85,18 +83,9 @@ function reduceReturns($conn,$reduceNum)
   //print_r($allStatistics);
   
 ?>
-</pre>
 
 
 
-<pre>
-<?php  
-    //Manager dashboard is used as predictive tool:
-	//reduceCosts($conn,"wollongong",0)
- 
-  
-?>
-</pre>
 
 
 
