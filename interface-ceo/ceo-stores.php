@@ -253,6 +253,7 @@
                                             <!--/.row-->
                                             <hr class="mt-0">
                                             <ul class="icons-list">
+                                                <!-- -->
                                                 <li>
                                                     <i class="icon-screen-desktop bg-primary"></i>
                                                     <div class="desc">
@@ -268,6 +269,8 @@
                                                         </button>
                                                     </div>
                                                 </li>
+                                                <!-- -->
+
                                                 <li>
                                                     <i class="icon-screen-smartphone bg-info"></i>
                                                     <div class="desc">

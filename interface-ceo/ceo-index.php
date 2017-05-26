@@ -8,9 +8,10 @@
 
     // Get summaries data for all stores
     foreach ($allInfo as $store) {
-        $totalStoreSales += $store['SALESNO'];
+        $totalStoreSales += $store['SALES'];
         $totalStoreReturn += $store['RETURN'];
         $totalStoreExpense += $store['TOTAL EXPENSE'];
+        $totalStoreSalesCount += $store['SALESCOUNT'];
     }
 
     // Get number of days in a month
@@ -31,10 +32,9 @@
     }   
 
     // Get sale and return percentage
-    $totalStoreItems = $totalStoreSales + $totalStoreReturn;
-    $sale_pct = 100*($totalStoreSales/$totalStoreItems);
-    $return_pct = 100*($totalStoreReturn/$totalStoreItems);
+    $income_pct = 95;
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -127,12 +127,27 @@
 
                 <div class="animated fadeIn">
                     <div class="row">
+
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-inverse card-primary">
                                 <div class="card-block pb-0">
                                 <!-- Sales function goes here-->
-                                    <h4 class="mb-0"><?php echo $totalStoreSales ?></h4>
-                                    <p>Number of sales ?></p>
+                                    <h4 class="mb-0">$<?php echo $totalStoreSales ?></h4>
+                                    <p>Total Income</p>
+                                </div>
+                                <div class="chart-wrapper px-1" style="height:70px;">
+                                    <canvas id="card-chart1" class="chart" height="70"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <!--/.col-->
+
+                        <div class="col-sm-6 col-lg-3">
+                            <div class="card card-inverse card-primary">
+                                <div class="card-block pb-0">
+                                <!-- Sales function goes here-->
+                                    <h4 class="mb-0"><?php echo $totalStoreSalesCount ?></h4>
+                                    <p>Number of sales</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
                                     <canvas id="card-chart1" class="chart" height="70"></canvas>
@@ -221,10 +236,10 @@
                         <div class="card-footer">
                             <ul>
                                 <li class="hidden-sm-down">
-                                    <div class="text-muted">Sales</div>
-                                    <strong><?php echo $sale_pct ?>%</strong>
+                                    <div class="text-muted">Total Income</div>
+                                    <strong><?php echo $income_pct ?>% of last month</strong>
                                     <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar" role="progressbar" style="width: <?php echo $sale_pct ?>%" aria-valuenow="<?php echo $sale_pct ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" role="progressbar" style="width: <?php echo $income_pct ?>%" aria-valuenow="<?php echo $income_pct ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </li>
 							
