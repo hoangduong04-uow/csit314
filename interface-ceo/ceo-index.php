@@ -36,9 +36,6 @@
     $totalItems = $totalStoreSalesCount + $totalStoreReturn;
     $sale_pct = number_format((float)(100*($totalStoreSalesCount/$totalItems)), 2, '.', '');
 
-    // Predict
-    $a = array(1,2,3,4);
-    echo predictNextValue($a);
 ?>
 
 
@@ -82,7 +79,7 @@
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a>
                     <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a>
-                    <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-lock">    </i> Logout</a>
                 </div>
             </li>
             <li class="nav-item hidden-md-down">
