@@ -104,7 +104,7 @@
 						<!--Brisbane Store -->
                             <div class="card">
                                 <div class="card-header">
-                                    Brisbane
+                                    <?php echo "<a href=\"../interface-manager/$city-manager-index.php\">". ucfirst($city)."</a>"?>
                                 </div>
                                 <div class="card-block">
                                     <div class="row">
