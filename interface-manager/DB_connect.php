@@ -51,8 +51,53 @@ function calAllInfo($conn,$cityName,$storeName)
   $allInfo['adelaide'] = calAllInfo($conn,"adelaide","store_data_adelaide");
   
  // print_r($allInfo);
+ 
+ 
+ 
+function predictByReduceCost($conn,$tname="wollongong",$reducedCost)
+{
   
-  
+  $query = "SELECT * FROM ".$tname;
+	$result = $conn->query ($query);
+	$resultTable = array();
+	if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      $resultTable[] = array('NAME' => $row['NAME'], 
+							'TYPE'=>$row['TYPE'],
+							'CODE'=>$row['CODE'],
+							'SELLING_PRICE'=>$row['SELLING_PRICE'],
+							'QUANTITY'=>$row['QUANTITY'],
+							'SALECOUNT'=>$row['SALECOUNT'],
+							'TOTALSALE'=>$row['TOTALSALE'],
+							'COST_PRICE'=>($row['COST_PRICE']-$row['COST_PRICE']*reducedCost),
+							'PROFIT' => ($row['SELLING_PRICE']-($row['COST_PRICE']-$row['COST_PRICE']*reducedCost))*$row['SALECOUNT'],
+							'RETURN_ITEMS'=>$row['RETURN_ITEMS']);
+    }
+  }
+  return $resultTable;
+}
+
+function predictByDecreaseReturns($conn,$tname="wollongong",$decreaseReturns)
+{
+  $query = "SELECT * FROM ".$tname;
+	$result = $conn->query ($query);
+	$resultTable = array();
+	if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      $resultTable[] = array('NAME' => $row['NAME'], 
+							'TYPE'=>$row['TYPE'],
+							'CODE'=>$row['CODE'],
+							'SELLING_PRICE'=>$row['SELLING_PRICE'],
+							'QUANTITY'=>$row['QUANTITY'],
+							'SALECOUNT'=>$row['SALECOUNT'],
+							'TOTALSALE'=>$row['TOTALSALE'],
+							'COST_PRICE'=>($row['COST_PRICE']-$row['COST_PRICE']*reducedCost),
+							'PROFIT' => ($row['SELLING_PRICE']-($row['COST_PRICE']-$row['COST_PRICE']*reducedCost))*$row['SALECOUNT'],
+							'RETURN_ITEMS'=>$row['RETURN_ITEMS']);
+    }
+  }
+  return $resultTable;
+}    
   
 ?>
 
