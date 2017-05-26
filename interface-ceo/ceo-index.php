@@ -6,22 +6,34 @@
     $totalStoreReturn = 0;
     $totalStoreExpense = 0;
 
+    // Get summaries data for all stores
     foreach ($allInfo as $store) {
         $totalStoreSales += $store['SALESNO'];
         $totalStoreReturn += $store['RETURN'];
         $totalStoreExpense += $store['TOTAL EXPENSE'];
     }
 
-    $date = 1;
-    while ($date < 30) {
+    // Get number of days in a month
+    $query = "SELECT COUNT(*) FROM store_data_adelaide";
+    $result = execQuery($conn, $query, "day count");
+    $day_count = $result->fetch_row()[0];
+
+
+    // Get profit for each day of all stores
+    $date = 0;
+    while ($date < $day_count) {
         foreach ($store_list as $city => $store) {
-            $query = "SELECT PROFIT FROM $store WHERE DATE=$date";
+            $query = "SELECT PROFIT FROM $store WHERE DATE=$date+1";
             $result = execQuery($conn, $query, "daily profit");
-            $profit[$date] +=  $result->fetch_row()[0];
+            $profit[$date+1] +=  $result->fetch_row()[0];
         }
         $date++;
     }   
-    print_r($profit);
+
+    // Get sale and return percentage
+    $totalStoreItems = $totalStoreSales + $totalStoreReturn;
+    $sale_pct = 100*($totalStoreSales/$totalStoreItems);
+    $return_pct = 100*($totalStoreReturn/$totalStoreItems);
 ?>
 
 <!DOCTYPE html>
@@ -184,6 +196,7 @@
                                 <div class="col-sm-7 hidden-sm-down">
                                     <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
                                         <div class="btn-group mr-1" data-toggle="buttons" aria-label="First group">
+                                            <!--
                                             <label class="btn btn-outline-secondary">
                                                 <input type="radio" name="options" id="option1" checked>Day
                                             </label>
@@ -193,6 +206,7 @@
                                             <label class="btn btn-outline-secondary">
                                                 <input type="radio" name="options" id="option3">Year
                                             </label>
+                                            -->
                                         </div>
                                     </div>
                                 </div>
@@ -208,17 +222,17 @@
                             <ul>
                                 <li class="hidden-sm-down">
                                     <div class="text-muted">Sales</div>
-                                    <strong>40.15 %</strong>
+                                    <strong><?php echo $sale_pct ?>%</strong>
                                     <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar" role="progressbar" style="width: <?php echo $sale_pct ?>%" aria-valuenow="<?php echo $sale_pct ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </li>
 							
                                 <li class="hidden-sm-down">
                                     <div class="text-muted">Item Returns</div>
-                                    <strong>24.093 Users (20%)</strong>
+                                    <strong><?php echo $return_pct ?>%</strong>
                                     <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $return_pct ?>%" aria-valuenow="<?php echo $return_pct ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </li>
                                 <li>
@@ -272,24 +286,36 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
 
+    <?php 
+        $date_list = array();
+        $date = 0;
+        while  ($date < $day_count) {
+            $date_list[] = $date+1;
+            $date++;
+        }
+    ?>
+
     <script>
-    var date_list = "<?php $date=1; while ($date<30) {echo "'Day $date'"; if($date!==29) echo ","; } ?>";
+
+    var date_list = <?php echo '[\'Day ' . implode('\', \'Day ', $date_list) . '\']' ?>;
+    var profit_list = <?php echo '[' . implode(', ', $profit) . ']' ?>;
+
         Highcharts.chart('daily-profit-linechart', {
     chart: {
         type: 'line'
     },
     title: {
-        text: 'Daily profit';
+        text: 'Daily Profit for all stores'
     },
     subtitle: {
-        text: 'Source: WorldClimate.com'
+        text: 'JB Hi-Fi'
     },
     xAxis: {
-        categories: [date_list]s
+        categories: date_list
     },
     yAxis: {
         title: {
-            text: 'Temperature (°C)'
+            text: 'Profit ($)'
         }
     },
     plotOptions: {
@@ -301,11 +327,8 @@
         }
     },
     series: [{
-        name: 'Tokyo',
-        data: [7.0, 6.9, 9.5, 14.5, 18.4, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
-    }, {
-        name: 'London',
-        data: [3.9, 4.2, 5.7, 8.5, 11.9, 15.2, 17.0, 16.6, 14.2, 10.3, 6.6, 4.8]
+        name: 'Daily Profit',
+        data: profit_list
     }]
 });
 
