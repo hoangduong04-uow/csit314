@@ -3,8 +3,8 @@
 	include('DB_connect.php');
 	include('manager_dashboard.php');
 	
-	$topSales=getTopItemBySaleCount($conn,"wollongong");
-	$lowSales=getLowItemBySaleCount($conn,"wollongong");
+	$topSales=getTopItemBySaleCount($conn,"sydney");
+	$lowSales=getLowItemBySaleCount($conn,"sydney");
  ?>
 
 
