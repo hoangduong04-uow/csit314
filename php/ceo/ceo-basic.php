@@ -31,8 +31,20 @@
     return $result;
   }  
 
-  function predict($array) {
-    return SVMModel::predict($array);
+  function predictNextValue($values) {
+    $count = count($values);
+
+    $i = 0;
+    while ($i < $count - 1) {
+      $interval += ($values[$i+1] - $values[$i]);
+      $i++;
+    }
+
+    $interval_avg = $interval/($count-1);
+    if ($values[$count-1] < $values[$count - 2])
+      return $values[$count-1] - $interval_avg;
+    else
+      return $values[$count-1] + $interval_avg;
   }
 
 ?>

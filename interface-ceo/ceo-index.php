@@ -33,6 +33,12 @@
 
     // Get sale and return percentage
     $income_pct = 95;
+    $totalItems = $totalStoreSalesCount + $totalStoreReturn;
+    $sale_pct = number_format((float)(100*($totalStoreSalesCount/$totalItems)), 2, '.', '');
+
+    // Predict
+    $a = array(1,2,3,4);
+    echo predictNextValue($a);
 ?>
 
 
@@ -143,26 +149,11 @@
                         <!--/.col-->
 
                         <div class="col-sm-6 col-lg-3">
-                            <div class="card card-inverse card-primary">
+                            <div class="card card-inverse card-info">
                                 <div class="card-block pb-0">
                                 <!-- Sales function goes here-->
                                     <h4 class="mb-0"><?php echo $totalStoreSalesCount ?></h4>
                                     <p>Number of sales</p>
-                                </div>
-                                <div class="chart-wrapper px-1" style="height:70px;">
-                                    <canvas id="card-chart1" class="chart" height="70"></canvas>
-                                </div>
-                            </div>
-                        </div>
-                        <!--/.col-->
-
-                        <div class="col-sm-6 col-lg-3">
-                            <div class="card card-inverse card-info">
-                                <div class="card-block pb-0">
-                                <!-- Return function goes here-->
-                                 
-                                    <h4 class="mb-0"><?php echo $totalStoreReturn ?></h4>
-                                    <p>Item Returned</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
                                     <canvas id="card-chart2" class="chart" height="70"></canvas>
@@ -244,14 +235,14 @@
                                 </li>
 							
                                 <li class="hidden-sm-down">
-                                    <div class="text-muted">Item Returns</div>
-                                    <strong><?php echo $return_pct ?>%</strong>
+                                    <div class="text-muted">Number of sales</div>
+                                    <strong><?php echo $sale_pct ?>%</strong>
                                     <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $return_pct ?>%" aria-valuenow="<?php echo $return_pct ?>" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-info" role="progressbar" style="width: <?php echo $sale_pct ?>%" aria-valuenow="<?php echo $sale_pct ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </li>
                                 <li>
-                                    <div class="text-muted">Pageviews</div>
+                                    <div class="text-muted">Customers</div>
                                     <strong>78.706 Views (60%)</strong>
                                     <div class="progress progress-xs mt-h">
                                         <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
