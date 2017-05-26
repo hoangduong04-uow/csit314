@@ -2,7 +2,7 @@
 <?php
 	include('DB_connect.php');
 	include('manager_dashboard.php');
-	
+	$quantities=calTotalSalesNo($conn, "canberra");
 	$topSales=getTopItemBySaleCount($conn,"canberra");
 	$lowSales=getLowItemBySaleCount($conn,"canberra");
  ?>
@@ -580,11 +580,11 @@
                                                 </td>
                                                 
                                                 <td class="text-center">
-                                                    42231
+                                                    <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                     
-                                                    <strong>234</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -597,11 +597,11 @@
                                                 </td>
                                                 
                                                 <td class="text-center">
-                                                   22241
+                                                   <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                     
-                                                    <strong>221</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -614,11 +614,11 @@
                                                 </td>
                                                
                                                 <td class="text-center">
-                                                    44736
+                                                    <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                    
-                                                    <strong>205</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -631,11 +631,11 @@
                                                 </td>
                                                
                                                 <td class="text-center">
-                                                   32677
+                                                   <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                    
-                                                    <strong>211</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -648,11 +648,11 @@
                                                 </td>
                                                 
                                                 <td class="text-center">
-                                                    45663
+                                                    <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                     
-                                                    <strong>212</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
                                             <tr>
@@ -665,11 +665,11 @@
                                                 </td>
                                                
                                                 <td class="text-center">
-                                                   39685
+                                                   <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                     
-                                                    <strong>215</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
 											<tr>
@@ -682,11 +682,11 @@
                                                 </td>
                                                
                                                 <td class="text-center">
-                                                   40555
+                                                   <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                     
-                                                    <strong>239</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
 											<tr>
@@ -699,11 +699,11 @@
                                                 </td>
                                                
                                                 <td class="text-center">
-                                                   38242
+                                                   <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                     
-                                                    <strong>203</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
 											<tr>
@@ -716,11 +716,11 @@
                                                 </td>
                                                
                                                 <td class="text-center">
-                                                   40255
+                                                   <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                     
-                                                    <strong>200</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
 											<tr>
@@ -733,11 +733,11 @@
                                                 </td>
                                                
                                                 <td class="text-center">
-                                                   45866
+                                                   <?php echo rand($quantities/10/2,$quantities/10+$quantities/10/2)?>
                                                 </td>
                                                 <td>
                                                     
-                                                    <strong>211</strong>
+                                                    <strong><?php echo rand(180,250)?></strong>
                                                 </td>
                                             </tr>
                                         </tbody>
