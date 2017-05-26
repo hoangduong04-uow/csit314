@@ -36,6 +36,12 @@
     $totalItems = $totalStoreSalesCount + $totalStoreReturn;
     $sale_pct = number_format((float)(100*($totalStoreSalesCount/$totalItems)), 2, '.', '');
 
+    // Working function
+    $value = 10;
+    $value = changeWorkforce(15, $value);
+    $value = changePrice(14, $value);
+    echo $value;
+
 ?>
 
 
@@ -119,8 +125,6 @@
                 <li class="breadcrumb-item"><a href="ceo-index.php">CEO</a>
                 </li>
                 <li class="breadcrumb-item active">Summary</li>
-
-        
             </ol>
 
 
