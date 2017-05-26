@@ -113,7 +113,6 @@ var vSales;
                     </li>
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link" href="Wollongong-manager-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
-						
                     </li>
                 </ul>
             </nav>
