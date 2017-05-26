@@ -54,6 +54,7 @@ var vSales;
   }
 
   function strategy(){
+
    document.getElementById("profitT").innerHTML = "Target Profit";
      
    document.getElementById("workVal").value = 1;
@@ -63,6 +64,17 @@ var vSales;
    document.getElementById("return").value=1;
    document.getElementById("satisfaction").value=1;
    document.getElementById("sales").value=1;
+
+    document.getElementById("profitT").innerHTML = "Target Profit";
+   vProfit = parseInt(document.getElementById("profitV").innerHTML);  
+   vWork = 1;
+   vHours = 2;
+   vPrices = 3;
+   vBenefit =  4;
+   vReturn = 5;
+   vSatisfaction = 6;
+   vSales = 7;
+
   }
 
 

@@ -110,7 +110,7 @@
                                                     <div class="callout callout-info">
                                                         <small class="text-muted">Last month sales</small>
                                                         <br>
-                                                        <strong class="h4">$<?php echo $allInfo[$city]['SALES']; ?></strong>
+                                                        <strong class="h4">$<?php echo $allInfo[$city]['SALESNO']; ?></strong>
                                                         <div class="chart-wrapper">
                                                             <canvas id="sparkline-chart-1" width="100" height="30"></canvas>
                                                         </div>
