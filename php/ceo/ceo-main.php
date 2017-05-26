@@ -15,9 +15,10 @@
   {
     // Items
     $quantities = getQuantity($conn,$cityName);
+    $saleCounts = calTotalSalesCount($conn, $cityName);
 
     // Stores
-    $returnNo = calStoreReturn($conn,$storeName);
+    $storeReturn = calStoreReturn($conn,$storeName);
     $storeSale = calStoreSale($conn,$storeName);
     $storeExpense = calStoreExpense($conn,$storeName);
     $totalStoreExpense = calTotalStoreExpense($conn,$storeName);
@@ -30,10 +31,11 @@
     //$Info['QUANTITIES'] = $quantities;
 
     //Add store details
-    $Info['SALESNO'] = $storeSale;
+    $Info['SALES'] = $storeSale;
+    $Info['SALESCOUNT'] = $saleCounts;
     $Info['EXPENSE'] = $storeExpense;
     $Info['TOTAL EXPENSE'] = $totalStoreExpense;
-    $Info['RETURN'] = $returnNo;
+    $Info['RETURN'] = $storeReturn;
 
 
     return $Info;
