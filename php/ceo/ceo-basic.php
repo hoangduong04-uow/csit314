@@ -49,7 +49,7 @@
 
   function changeWorkforce ($workforce, $value) {
     $pct = $workforce/100;
-    $scale = 0.2;
+    $scale = 0.5;
 
     if ($pct < -0.5)
       $value += $value*$pct*$scale;
@@ -65,7 +65,7 @@
 
   function changePrice ($price, $value ){
     $pct = $price/100;
-    $scale = 0.4;
+    $scale = 0.8;
 
     if ($pct < -0.5)
       $value += $value*$pct*$scale;

@@ -39,6 +39,7 @@
     // Working function
     $value = 10;
     $value = changeWorkforce(15, $value);
+    $value = changePrice(14, $value);
     echo $value;
 
 ?>
