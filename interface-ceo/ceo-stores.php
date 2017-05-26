@@ -64,6 +64,9 @@
                     <li class="nav-item nav-dropdown">
                         <a class="nav-link" href="ceo-newstore.html"><i class="icon-star"></i> Open New Store</a>
                     </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="ceo-newstore.html"><i class="icon-star"></i> Open New Store</a>
+                    </li>
 
                 </ul>
             </nav>

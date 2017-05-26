@@ -99,16 +99,16 @@ var vSales;
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Wollongong-manager-index.php"><i class="icon-star"></i> Summary </a>
+                        <a class="nav-link" href="Sydney-manager-index.php"><i class="icon-star"></i> Summary </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="Wollongong-manager-records.php"><i class="icon-star"></i> Store operations </a>
+                        <a class="nav-link" href="Sydney-manager-records.php"><i class="icon-star"></i> Store operations </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Wollongong-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
+                        <a class="nav-link" href="Sydney-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="Wollongong-manager-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
+                        <a class="nav-link" href="Sydney-manager-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
                     </li>
                 </ul>
             </nav>

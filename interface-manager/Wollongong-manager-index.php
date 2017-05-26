@@ -211,7 +211,7 @@
                                             <a class="dropdown-item" href="#">Something else here</a>
                                         </div>
                                     </div>
-                                    <h4 class="mb-0"><?php print_r($allInfo['wollongong']['TOTAL EXPENSE']) ?></h4>
+                                    <h4 class="mb-0">$<?php print_r($allInfo['wollongong']['TOTAL EXPENSE']) ?></h4>
                                     <p>Total Expenses</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
