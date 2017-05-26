@@ -47,4 +47,36 @@
       return $values[$count-1] + $interval_avg;
   }
 
+  function changeWorkforce ($workforce, $value) {
+    $pct = $workforce/100;
+    $scale = 0.2;
+
+    if ($pct < -0.5)
+      $value += $value*$pct*$scale;
+    else if ($pct > -0.5 && $pct < 0)
+      $value -= $value*$pct*$scale;
+    else if ($pct > 0 && $pct < 0.5)
+      $value += $value*$pct*$scale;
+    else if ($pct > 0.5)
+      $value -= $value*$pct*$scale; 
+
+    return $value;  
+  }
+
+  function changePrice ($price, $value ){
+    $pct = $price/100;
+    $scale = 0.4;
+
+    if ($pct < -0.5)
+      $value += $value*$pct*$scale;
+    else if ($pct > -0.5 && $pct < 0)
+      $value -= $value*$pct*$scale;
+    else if ($pct > 0 && $pct < 0.5)
+      $value += $value*$pct*$scale;
+    else if ($pct > 0.5)
+      $value -= $value*$pct*$scale; 
+
+    return $value; 
+  }
+
 ?>
