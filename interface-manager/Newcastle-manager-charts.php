@@ -50,7 +50,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                    
-                    <span class="hidden-md-down">newcastle Manager</span>
+                    <span class="hidden-md-down">Newcastle Manager</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
 
@@ -82,13 +82,13 @@
                 <ul class="nav">
             
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="newcastle-manager-index.php"><i class="icon-puzzle"></i> Summary</a>
+                        <a class="nav-link nav-dropdown-toggle" href="Newcastle-manager-index.php"><i class="icon-puzzle"></i> Summary</a>
                         <ul class="nav-dropdown-items">
                           
                         </ul>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="newcastle-manager-records.php"><i class="icon-star"></i> Store operations</a>
+                        <a class="nav-link nav-dropdown-toggle" href="Newcastle-manager-records.php"><i class="icon-star"></i> Store operations</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 <a class="nav-link" href="icons-font-awesome.html"><i class="icon-star"></i> Font Awesome</a>
@@ -100,7 +100,10 @@
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="newcastle-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
+                        <a class="nav-link" href="Newcastle-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
+                    </li>
+					<li class="nav-item">
+                        <a class="nav-link" href="Newcastle-manager-strategy.php"><i class="icon-pie-chart"></i> Strategic Planning</a>
                     </li>
                     <li class="divider"></li>
                     <li class="nav-item nav-dropdown">

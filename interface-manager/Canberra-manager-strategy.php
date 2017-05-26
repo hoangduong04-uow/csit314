@@ -38,8 +38,6 @@ var vSatisfaction;
 var vSales;
 
   function calcProfit(){
-	  
-   vProfit = "a";
    
    vProfit = parseInt(document.getElementById("profitV").innerHTML);  
    vWork = parseInt(document.getElementById("workVal").value); 	
@@ -50,12 +48,12 @@ var vSales;
    vSatisfaction = parseInt(document.getElementById("satisfaction").value);
    vSales = parseInt(document.getElementById("sales").value);
 
-   
+     var newProfit = vProfit + vWork + vPrices + vBenefit + vReturn + vSatisfaction + vSales; 
+	 vProfit = newProfit;
 
-
-	document.getElementById("profitV").innerHTML ='<?php echo predictNextValue($Profits) ?>'; 
-	document.getElementById("profitT").innerHTML = "Predicted Profit"; 
-	document.getElementById("profitV").innerHTML = vProfit; 
+	
+	 document.getElementById("profitT").innerHTML = "Predicted Profit"; 
+	 document.getElementById("profitV").innerHTML = vProfit; 
 	 
   }
   
@@ -101,16 +99,16 @@ var vSales;
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="Wollongong-manager-index.php"><i class="icon-star"></i> Summary </a>
+                        <a class="nav-link" href="Canberra-manager-index.php"><i class="icon-star"></i> Summary </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="Wollongong-manager-records.php"><i class="icon-star"></i> Store operations </a>
+                        <a class="nav-link" href="Canberra-manager-records.php"><i class="icon-star"></i> Store operations </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Wollongong-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
+                        <a class="nav-link" href="Canberra-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="Wollongong-manager-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
+                        <a class="nav-link" href="Canberra-manager-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
                     </li>
                 </ul>
             </nav>
@@ -156,7 +154,7 @@ var vSales;
                                                     <div class="callout callout-info">
                                                         <small id="profitT" class="text-muted">Target Profit</small>
                                                         <br>
-                                                        <strong id="profitV" class="h4"></strong>
+                                                        <strong id="profitV" class="h4"><?php echo predictNextValue($Profits) ?></strong>
 														<br>
 														<input type="button" value="Predict Profit" onClick="calcProfit()">
                                                         <input type="button" value="Strategy" onClick="strategy()">
@@ -184,20 +182,30 @@ var vSales;
                                                 </li>
                                                 <li>
                                                    
-                                                     Product prices: <input id="prices" style="height:20px;" type="text"></input><span id="change"/>
+                                                        Product prices: <input id="prices" style="height:20px;" type="text"></input><span id="change"/>
                                                    
                                                 
                                                 </li>
-												 
+												 <li>
+                                                   
+                                                        Staff benefits: <input id="benefit" style="height:20px;" type="text"><span id="change"/>
+                                                    
+                                                
+                                                </li>
                                                 <li>
                                                     
                                                         Return: <input id="return" style="height:20px;" type="text"><span id="change"/>
                                                     
                                                     
                                                 </li>
-                                           
                                                 <li>
-                                          
+                                                  
+                                                        Emp.Satisfaction: <input id="satisfaction" style="height:20px;" type="text"><span id="change"/>
+                                                   
+                                                    
+                                                </li>
+                                                <li>
+                                                   
                                                         Sales: <input id="sales" style="height:20px;" type="text"><span id="change"/>
                                                    
                                                     
