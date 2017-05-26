@@ -1,3 +1,6 @@
+<?php
+    include('../php/ceo/ceo-main.php');
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,10 +46,9 @@ var vSales;
    vSatisfaction = parseInt(document.getElementById("satisfaction").value);
    vSales = parseInt(document.getElementById("sales").value);
 
-     var newProfit = vProfit + vWork + vPrices + vBenefit + vReturn + vSatisfaction + vSales; 
-	 vProfit = newProfit;
-
-	
+     var newProfit = vProfit;
+     newProfit = ;
+     
 	 document.getElementById("profitT").innerHTML = "Predicted Profit"; 
 	 document.getElementById("profitV").innerHTML = vProfit; 
   }
@@ -56,7 +58,7 @@ var vSales;
      
    document.getElementById("workVal").value = 1;
    document.getElementById("openH").value =1 ; 
-  document.getElementById("prices").value =1;
+   document.getElementById("prices").value =1;
    document.getElementById("benefit").value =1; 
    document.getElementById("return").value=1;
    document.getElementById("satisfaction").value=1;
@@ -114,7 +116,7 @@ var vSales;
                         <a class="nav-link" href="ceo-newstore.html"><i class="icon-star"></i> Open New Store</a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-strategy.html"><i class="icon-star"></i> Strategic Planning</a>
+                        <a class="nav-link" href="ceo-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
                     </li>
                 </ul>
             </nav>
@@ -162,8 +164,7 @@ var vSales;
                                                         <br>
                                                         <strong id="profitV" class="h4">9123</strong>
 														<br>
-														<input type="button" value="Predict Profit" onClick="calcProfit()">
-                                                        <input type="button" value="Strategy" onClick="strategy()">
+														<input type="button" value="Calculate Profit" onClick="calcProfit()">
                                                     </div>
                                                 </div>
                                                 <div class="chart-wrapper">
