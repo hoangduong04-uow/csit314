@@ -2,6 +2,9 @@
 <?php
 	include('DB_connect.php');
 	include('manager_dashboard.php');
+	
+	$topSales=getTopItemBySaleCount($conn,"melbourne");
+	$lowSales=getLowItemBySaleCount($conn,"melbourne");
  ?>
 
 
@@ -250,10 +253,11 @@
                     </div>
                     <!--/.row-->
 
+                   
                     <div class="row">
                         <div class="col-md-12">
                             <div class="card">
-                               <div class="card-header">
+                                <div class="card-header">
                                     Sales
                                 </div>
                                 <div class="card-block">
@@ -276,16 +280,16 @@
                                             </div>
                                             <!--/.row-->
                                             <hr class="mt-0">
-                                               <ul class="icons-list">
+                                          <ul class="icons-list">
                                                 <li>
-                                                    <i class="icon-screen-desktop bg-primary"></i>
+                                                    <i class="icon-screen-desktop bg-primary"></i> 
                                                     <div class="desc">
-                                                        <div class="title">Sony Bravia 85" 4K HDR UHD LED LCD TV</div>
+                                                        <div class="title"><?php echo $topSales[0]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>599880</strong>
+                                                        <strong><?php echo $topSales[0]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -295,12 +299,12 @@
                                                 <li>
                                                     <i class="icon-screen-smartphone bg-info"></i>
                                                     <div class="desc">
-                                                        <div class="title">Apple MacBook Pro 15" with Touch Bar 512GB (Space Grey)</div>
+                                                        <div class="title"><?php echo $topSales[1]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>233585</strong>
+                                                        <strong><?php echo $topSales[1]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -310,12 +314,12 @@
                                                 <li>
                                                     <i class="icon-screen-smartphone bg-warning"></i>
                                                     <div class="desc">
-                                                        <div class="title">Apple iMac with Retina 5K display 27" 3.3GHz</div>
-                                                        
+                                                        <div class="title"><?php echo $topSales[2]["NAME"]?></div>
+                                     
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>201264</strong>
+                                                        <strong><?php echo $topSales[2]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -325,12 +329,13 @@
                                                 <li>
                                                     <i class="icon-user bg-danger"></i>
                                                     <div class="desc">
-                                                        <div class="title">Apple MacBook Pro 15" with Touch Bar 256GB (Space Grey)</div>
-                                                        
+                                                        <div class="title"><?php echo $topSales[3]["NAME"]?></div>
+						
+                                       
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>187044</strong>
+                                                        <strong><?php echo $topSales[3]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -340,12 +345,12 @@
                                                 <li>
                                                     <i class="icon-social-spotify bg-success"></i>
                                                     <div class="desc">
-                                                        <div class="title">Samsung UA75JU6400W 75" 4K UHD Smart LED LCD TV</div>
+                                                        <div class="title"><?php echo $topSales[4]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>184900</strong>
+                                                        <strong><?php echo $topSales[4]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -355,12 +360,12 @@
                                                 <li>
                                                     <i class="icon-cloud-download bg-danger"></i>
                                                     <div class="desc">
-                                                        <div class="title">Apple MacBook Pro 13" with Touch Bar 512GB (Silver)</div>
+                                                        <div class="title"><?php echo $topSales[5]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>170886</strong>
+                                                        <strong><?php echo $topSales[5]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -370,12 +375,12 @@
                                                 <li>
                                                     <i class="icon-camera bg-warning"></i>
                                                     <div class="desc">
-                                                        <div class="title">Apple iMac with Retina 5K display 27" 3.2GHz</div>
+                                                        <div class="title"><?php echo $topSales[6]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>159429</strong>
+                                                        <strong><?php echo $topSales[6]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -441,12 +446,12 @@
                                                 <li>
                                                     <i class="icon-screen-desktop bg-primary"></i>
                                                     <div class="desc">
-                                                        <div class="title">Marley Smile Jamaica In-Ear Headphones (Copper)</div>
+                                                        <div class="title"><?php echo $lowSales[0]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>1122</strong>
+                                                        <strong><?php echo $lowSales[0]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -456,12 +461,12 @@
                                                 <li>
                                                     <i class="icon-screen-smartphone bg-info"></i>
                                                     <div class="desc">
-                                                        <div class="title">AERPRO Multicolour LED 5M Strip Lighting</div>
+                                                        <div class="title"><?php echo $lowSales[1]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>1204</strong>
+                                                        <strong><?php echo $lowSales[1]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -471,12 +476,12 @@
                                                 <li>
                                                     <i class="icon-screen-smartphone bg-warning"></i>
                                                     <div class="desc">
-                                                        <div class="title">MXL Tempo SK USB Microphone (Silver)</div>
+                                                        <div class="title"><?php echo $lowSales[2]["NAME"]?></div>
                                                        
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>3332</strong>
+                                                        <strong><?php echo $lowSales[2]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -486,12 +491,12 @@
                                                 <li>
                                                     <i class="icon-user bg-danger"></i>
                                                     <div class="desc">
-                                                        <div class="title">Stadium USBMIC1 USB Studio Microphone</div>
+                                                        <div class="title"><?php echo $lowSales[3]["NAME"]?></div>
                                                        
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>4680</strong>
+                                                        <strong><?php echo $lowSales[3]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -501,12 +506,12 @@
                                                 <li>
                                                     <i class="icon-social-spotify bg-success"></i>
                                                     <div class="desc">
-                                                        <div class="title">Rode NTUSB Microphone</div>
-                                                       
+                                                        <div class="title"><?php echo $lowSales[4]["NAME"]?></div>
+                                                
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>4872</strong>
+                                                        <strong><?php echo $lowSales[4]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -516,12 +521,12 @@
                                                 <li>
                                                     <i class="icon-cloud-download bg-danger"></i>
                                                     <div class="desc">
-                                                        <div class="title">Beats Tour 2 Active In-Ear Headphones (Red)</div>
+                                                        <div class="title"><?php echo $lowSales[5]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>5070</strong>
+                                                        <strong><?php echo $lowSales[5]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -531,12 +536,12 @@
                                                 <li>
                                                     <i class="icon-camera bg-warning"></i>
                                                     <div class="desc">
-                                                        <div class="title">Mackie CR4 4" Powered Studio Monitors</div>
+                                                        <div class="title"><?php echo $lowSales[6]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>5292</strong>
+                                                        <strong><?php echo $lowSales[6]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
