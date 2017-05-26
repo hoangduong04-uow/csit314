@@ -4,7 +4,7 @@
 function connectDB() {
   define ('DBSERVER', 'localhost:3306');
   define ('DBUSER', 'root');
-  define ('DBPASS','');
+  define ('DBPASS','root');
   define ('DBNAME','csit314');
   
   $mysqli = new mysqli(DBSERVER, DBUSER, DBPASS, DBNAME);
