@@ -1,5 +1,10 @@
 
 <!DOCTYPE html>
+<?php
+	include('DB_connect.php');
+	include('manager_dashboard.php');
+	$Profits=array(3000,4000,4500);
+ ?>
 <html lang="en">
 
 <head>
@@ -49,20 +54,11 @@ var vSales;
 	
 	 document.getElementById("profitT").innerHTML = "Predicted Profit"; 
 	 document.getElementById("profitV").innerHTML = vProfit; 
+	 
   }
   
 
-  function strategy(){
-    document.getElementById("profitT").innerHTML = "Target Profit";
-   vProfit = parseInt(document.getElementById("profitV").innerHTML);  
-   vWork = 1;
-   vHours = 2;
-   vPrices = 3;
-   vBenefit =  4;
-   vReturn = 5;
-   vSatisfaction = 6;
-   vSales = 7;
-  }
+  
 
 
 </script>	
@@ -158,7 +154,7 @@ var vSales;
                                                     <div class="callout callout-info">
                                                         <small id="profitT" class="text-muted">Target Profit</small>
                                                         <br>
-                                                        <strong id="profitV" class="h4">9123</strong>
+                                                        <strong id="profitV" class="h4"><?php echo predictNextValue($Profits) ?></strong>
 														<br>
 														<input type="button" value="Predict Profit" onClick="calcProfit()">
                                                         <input type="button" value="Strategy" onClick="strategy()">
