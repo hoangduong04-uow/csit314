@@ -111,4 +111,16 @@ function calReturn($conn,$tname)
   //print_r ($result);
   return $result->fetch_row()[0];
 }
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
