@@ -2,7 +2,7 @@
 <?php
 	include('DB_connect.php');
 	include('manager_dashboard.php');
-	
+	$quantities=calTotalSalesNo($conn, "sydney");
 	$topSales=getTopItemBySaleCount($conn,"sydney");
 	$lowSales=getLowItemBySaleCount($conn,"sydney");
  ?>
