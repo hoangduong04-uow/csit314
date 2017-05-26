@@ -132,7 +132,7 @@
                                 <div class="card-block pb-0">
                                 <!-- Sales function goes here-->
                                     <h4 class="mb-0"><?php echo $totalStoreSales ?></h4>
-                                    <p>Number of sales</p>
+                                    <p>Number of sales ?></p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
                                     <canvas id="card-chart1" class="chart" height="70"></canvas>
@@ -321,9 +321,9 @@
     plotOptions: {
         line: {
             dataLabels: {
-                enabled: true
+                enabled: false
             },
-            enableMouseTracking: false
+            enableMouseTracking: true
         }
     },
     series: [{
