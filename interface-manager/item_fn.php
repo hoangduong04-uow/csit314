@@ -36,7 +36,7 @@ function getTopProfitItem($conn,$tname)
 
 function getTopItemBySaleCount($conn,$tname)
 {
-	$query = "SELECT * FROM ".$tname." order by PROFIT DESC";
+	$query = "SELECT * FROM ".$tname." order by SALECOUNT DESC";
 	$result = $conn->query ($query);
 	$resultTable = array();
 	if ($result->num_rows > 0) {
@@ -49,7 +49,7 @@ function getTopItemBySaleCount($conn,$tname)
 
 function getLowItemBySaleCount($conn,$tname)
 {
-	$query = "SELECT * FROM ".$tname." order by PROFIT ASC";
+	$query = "SELECT * FROM ".$tname." order by SALECOUNT ASC";
 	$result = $conn->query ($query);
 	$resultTable = array();
 	if ($result->num_rows > 0) {

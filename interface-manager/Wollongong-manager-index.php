@@ -278,14 +278,14 @@
                                             <hr class="mt-0">
                                           <ul class="icons-list">
                                                 <li>
-                                                    <i class="icon-screen-desktop bg-primary"></i>
+                                                    <i class="icon-screen-desktop bg-primary"></i> 
                                                     <div class="desc">
-                                                        <div class="title">Sony Bravia 85" 4K HDR UHD LED LCD TV</div>
+                                                        <div class="title"><?php echo $topSales[0]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>299940</strong>
+                                                        <strong><?php echo $topSales[0]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -295,12 +295,12 @@
                                                 <li>
                                                     <i class="icon-screen-smartphone bg-info"></i>
                                                     <div class="desc">
-                                                        <div class="title">Sony X9300D 65" 4K UHD HDR Android Smart LED LCD TV</div>
+                                                        <div class="title"><?php echo $topSales[1]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>111944</strong>
+                                                        <strong><?php echo $topSales[1]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -310,12 +310,12 @@
                                                 <li>
                                                     <i class="icon-screen-smartphone bg-warning"></i>
                                                     <div class="desc">
-                                                        <div class="title">Samsung KU6000 70" 4K UHD HDR Smart LED LCD TV</div>
+                                                        <div class="title"><?php echo $topSales[2]["NAME"]?></div>
                                      
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>89880</strong>
+                                                        <strong><?php echo $topSales[2]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -325,13 +325,13 @@
                                                 <li>
                                                     <i class="icon-user bg-danger"></i>
                                                     <div class="desc">
-                                                        <div class="title">Apple iMac with Retina 5K display 27" 3.2GHz</div>
+                                                        <div class="title"><?php echo $topSales[3]["NAME"]?></div>
 						
                                        
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>78316</strong>
+                                                        <strong><?php echo $topSales[3]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -341,12 +341,12 @@
                                                 <li>
                                                     <i class="icon-social-spotify bg-success"></i>
                                                     <div class="desc">
-                                                        <div class="title">Sony X8500D 65" 4K UHD HDR Android Smart LED LCD TV</div>
+                                                        <div class="title"><?php echo $topSales[4]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>67104</strong>
+                                                        <strong><?php echo $topSales[4]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -356,12 +356,12 @@
                                                 <li>
                                                     <i class="icon-cloud-download bg-danger"></i>
                                                     <div class="desc">
-                                                        <div class="title">Olympus OM-D E-M1 Mark II Digital SLR (Body Only)</div>
+                                                        <div class="title"><?php echo $topSales[5]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>54978</strong>
+                                                        <strong><?php echo $topSales[5]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
@@ -371,12 +371,12 @@
                                                 <li>
                                                     <i class="icon-camera bg-warning"></i>
                                                     <div class="desc">
-                                                        <div class="title">Apple MacBook Pro 13" with Touch Bar 512GB (Silver)</div>
+                                                        <div class="title"><?php echo $topSales[6]["NAME"]?></div>
                                                         
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
-                                                        <strong>50966</strong>
+                                                        <strong><?php echo $topSales[6]["SALECOUNT"]?></strong>
                                                     </div>
                                                     <div class="actions">
                                                         <button type="button" class="btn btn-link text-muted"><i class="icon-settings"></i>
