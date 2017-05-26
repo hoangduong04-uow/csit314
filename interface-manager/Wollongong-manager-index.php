@@ -4,6 +4,7 @@
 	include('manager_dashboard.php');
 	$quantities=calTotalSalesNo($conn, "wollongong");
 	$topSales=getTopItemBySaleCount($conn,"wollongong");
+	$lowSales=getLowItemBySaleCount($conn,"wollongong");
  ?>
 
 

@@ -47,6 +47,19 @@ function getTopItemBySaleCount($conn,$tname)
   return $resultTable;
 }
 
+function getLowItemBySaleCount($conn,$tname)
+{
+	$query = "SELECT * FROM ".$tname." order by PROFIT ASC";
+	$result = $conn->query ($query);
+	$resultTable = array();
+	if ($result->num_rows > 0) {
+    while($row = $result->fetch_assoc()) {
+      $resultTable[] = array('NAME' => $row['NAME'], 'SALECOUNT' => $row['SALECOUNT']);
+    }
+  }
+  return $resultTable;
+}
+
 function getTotalQuantity($conn,$tname)
 {
 // total quantity
