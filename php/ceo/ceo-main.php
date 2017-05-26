@@ -24,6 +24,9 @@
     $totalStoreExpense = calTotalStoreExpense($conn,$storeName);
     $profit = calStoreProfit($conn, $storeName);
 
+    // Customers
+    $
+
     // Add items details
     $Info = array();
     $Info['PROFIT'] = $profit;
