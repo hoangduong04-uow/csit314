@@ -1,5 +1,10 @@
 
 <!DOCTYPE html>
+<?php
+	include('DB_connect.php');
+	include('manager_dashboard.php');
+	$Profits=array(3000,4000,4500);
+ ?>
 <html lang="en">
 
 <head>
@@ -49,22 +54,11 @@ var vSales;
 	
 	 document.getElementById("profitT").innerHTML = "Predicted Profit"; 
 	 document.getElementById("profitV").innerHTML = vProfit; 
+	 
   }
+  
 
-  function strategy(){
-   document.getElementById("profitT").innerHTML = "Target Profit";
-     
-   document.getElementById("workVal").value = 1;
-   document.getElementById("openH").value =1 ; 
-  document.getElementById("prices").value =1;
-   document.getElementById("benefit").value =1; 
-   document.getElementById("return").value=1;
-   document.getElementById("satisfaction").value=1;
-   document.getElementById("sales").value=1;
-  }
-
-
-
+  
 
 
 </script>	
@@ -85,7 +79,7 @@ var vSales;
            
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                    <span class="hidden-md-down">CEO</span>
+                    <span class="hidden-md-down">Manager</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
                     <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a>
@@ -105,16 +99,16 @@ var vSales;
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="ceo-index.php"><i class="icon-star"></i> Summary </a>
+                        <a class="nav-link" href="Sydney-manager-index.php"><i class="icon-star"></i> Summary </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-stores.php"><i class="icon-star"></i> Stores </a>
+                        <a class="nav-link" href="Sydney-manager-records.php"><i class="icon-star"></i> Store operations </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Sydney-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-newstore.html"><i class="icon-star"></i> Open New Store</a>
-                    </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-strategy.html"><i class="icon-star"></i> Strategic Planning</a>
+                        <a class="nav-link" href="Sydney-manager-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
                     </li>
                 </ul>
             </nav>
@@ -126,7 +120,7 @@ var vSales;
             <!-- Breadcrumb -->
             <ol class="breadcrumb">
                 <li class="breadcrumb-item">Home</li>
-                <li class="breadcrumb-item"><a href="#">CEO</a>
+                <li class="breadcrumb-item"><a href="#">Manager</a>
                 </li>
                 <li class="breadcrumb-item active">Stores</li>
 
@@ -160,7 +154,7 @@ var vSales;
                                                     <div class="callout callout-info">
                                                         <small id="profitT" class="text-muted">Target Profit</small>
                                                         <br>
-                                                        <strong id="profitV" class="h4">9123</strong>
+                                                        <strong id="profitV" class="h4"><?php echo predictNextValue($Profits) ?></strong>
 														<br>
 														<input type="button" value="Predict Profit" onClick="calcProfit()">
                                                         <input type="button" value="Strategy" onClick="strategy()">
