@@ -52,7 +52,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                    
-                    <span class="hidden-md-down">Adelaide Manager</span>
+                    <span class="hidden-md-down">adelaide Manager</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
 
@@ -101,9 +101,6 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="Adelaide-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
-                    </li>
-					<li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="Adelaide-manager-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
                     </li>
                     <li class="divider"></li>
                    

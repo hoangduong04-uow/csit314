@@ -50,7 +50,7 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
                    
-                    <span class="hidden-md-down">Melbourne Manager</span>
+                    <span class="hidden-md-down">melbourne Manager</span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right">
 
@@ -101,9 +101,6 @@
 
                     <li class="nav-item">
                         <a class="nav-link" href="Melbourne-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
-                    </li>
-					<li class="nav-item">
-                        <a class="nav-link" href="Melbourne-manager-strategy.php"><i class="icon-pie-chart"></i> Strategic Planning</a>
                     </li>
                     <li class="divider"></li>
                     <li class="nav-item nav-dropdown">

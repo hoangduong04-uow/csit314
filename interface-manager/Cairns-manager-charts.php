@@ -102,9 +102,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Cairns-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
                     </li>
-						<li class="nav-item">
-                        <a class="nav-link" href="Cairns-manager-strategy.php"><i class="icon-pie-chart"></i> Strategic Planning</a>
-                    </li>
                     <li class="divider"></li>
                     <li class="nav-item nav-dropdown">
                         <ul class="nav-dropdown-items">
