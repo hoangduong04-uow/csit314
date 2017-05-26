@@ -37,10 +37,7 @@ function calAllInfo($conn,$cityName,$storeName)
 	return $Info;
 }
 
-?>
 
-<pre>
-<?php
 // Display everything here, put a pre tag around this to display all info
   $allInfo['wollongong'] = calAllInfo($conn,"wollongong","store_data_wollongong");
   $allInfo['sydney'] = calAllInfo($conn,"sydney","store_data_sydney");
@@ -58,4 +55,4 @@ function calAllInfo($conn,$cityName,$storeName)
   
   
 ?>
-</pre>
+
