@@ -1,0 +1,402 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+       #map-canvas {
+          margin: 0;
+          padding: 0;
+          height: 450px;
+          width: 1000px;
+        }
+    </style>
+    
+	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+    <script>
+	
+	     var a = -25.274398;
+		 var b = 133.775136;
+		 var c= 4;
+		 var vpopulation = 0;
+		 var vLease = 0;
+		 var vFloor = 0;
+		 var vComp = 0;
+		 var vProfit = 0;
+		 var vReturn = 0;
+		 var vLossGain = 0;
+		 var investment = 100000;
+		 
+	     function initialize() {
+            var myLatlng = new google.maps.LatLng(a, b);
+            var mapOptions = {
+                zoom: c,
+                center: myLatlng,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            }
+            var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+            var marker = new google.maps.Marker({
+                               position: myLatlng,
+                               map: map,
+                               title: 'My Place!'
+            });
+        }    
+		
+		 function setLoc() {
+		   
+		   var loc = document.getElementById("myLocation").value;
+		   
+		   displayLocation(loc);
+		
+		}
+		
+		
+        function displayLocation(loc) {
+		
+		  
+		  document.getElementById("err").innerHTML ="";
+		  if (loc == 'chatswood'){
+		    a = -33.800770;
+		    b = 151.179600;
+			c = 15;
+			initialize();
+			
+			document.getElementById("locc").innerHTML = "Chatswood";
+			document.getElementById("popp").innerHTML = "2200"
+			vpopulation = 2200;
+			vLeasse = 24;
+			vComp = 3;
+			vFloor = 1;
+			displayPrediction(loc)
+			
+		  } else if (loc == 'hurstville'){
+		    a = -33.966667;
+		    b = 151.100000;
+			c = 15;
+			initialize();
+			
+			
+			document.getElementById("locc").innerHTML = "Hurstville";
+			document.getElementById("popp").innerHTML = "3470";
+			vpopulation = 3470;
+			vLease = 24;
+			vComp = 2;
+			vFloor = 1;
+			displayPrediction(loc)
+			
+		  } else if (loc == 'kiama') {
+		    a = -34.673822;
+		    b = 150.844371; 
+			c = 15;
+			initialize();
+			
+			document.getElementById("locc").innerHTML = "Kiama";
+			document.getElementById("popp").innerHTML = "1785";
+			vpopulation = 1785;
+			vLease = 36;
+			vComp = 0;
+			vFloor = 1;
+			displayPrediction(loc)
+		  } else {
+		    document.getElementById("err").innerHTML = "There is no matching information.";
+		  }
+		}
+        
+		function displayPrediction(loc) {
+	
+		   
+		   document.getElementById("lease").innerHTML = vLease;
+		   document.getElementById("floor").innerHTML = vFloor;
+		   document.getElementById("competitor").innerHTML = vComp;
+		   
+		   vProfit = (0.5* vLease - 1.7 * vFloor - 2.2 * vComp) * investment; 
+		   document.getElementById("profit").innerHTML = vProfit;
+		   
+		   vReturn = vProfit;
+		   document.getElementById("return").innerHTML = vReturn;
+		   
+		   vLossGain = vReturn;
+		   document.getElementById("lossVsGain").innerHTML = vLossGain;
+		   
+		}
+        
+		
+		
+		
+    </script>
+
+	
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1 , user-scalable=no, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="keyword" content="">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Home</title>
+
+    <!-- Icons -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Main styles for this application -->
+    <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+
+
+<body class="app header-fixed sidebar-fixed aside-menu-fixed aside-menu-hidden"  onload="initialize();">
+    <header class="app-header navbar">
+        <button class="navbar-toggler mobile-sidebar-toggler hidden-lg-up" type="button">☰</button>
+        <a class="navbar-brand" href="#"></a>
+        <ul class="nav navbar-nav ml-auto">
+            
+           
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle nav-link" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="hidden-md-down">CEO</span>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right">
+                    <a class="dropdown-item" href="#"><i class="fa fa-wrench"></i> Settings</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-shield"></i> Lock Account</a>
+                    <a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Logout</a>
+                </div>
+            </li>
+            <li class="nav-item hidden-md-down">
+               
+            </li>
+
+        </ul>
+    </header>
+
+     <div class="app-body">
+        <div class="sidebar">
+            <nav class="sidebar-nav">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="ceo-index.html"><i class="icon-star"></i> Summary </a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="ceo-stores.html"><i class="icon-star"></i> Stores </a>
+                    </li>
+                    <li class="nav-item nav-dropdown">
+                        <a class="nav-link" href="ceo-storemanagement.html"><i class="icon-star"></i> Open New Store</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </div>
+
+        <!-- Main content -->
+        <main class="main">
+
+            <!-- Breadcrumb -->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">Home</li>
+                <li class="breadcrumb-item"><a href="#">CEO</a>
+                </li>
+                <li class="breadcrumb-item active">Open New Store</li>
+
+        
+            </ol>
+
+			
+			<div class="container-fluid">
+
+
+
+
+
+                <div class="animated fadeIn">
+  
+                    <!--/.row-->
+                  <!--/ cARD -->
+                    <div class="card">
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <h4 class="card-title mb-0">Open New Store</h4>
+                                    <div class="small text-muted"><p id="date"></p></div>
+                                </div>
+                                <!--/.col-->
+                                <div class="col-sm-7 hidden-sm-down">
+                                    
+                                    
+                                    <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
+                                        <div class="btn-group mr-1" data-toggle="buttons" aria-label="First group">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                            <!--/.row-->
+							<div clss="row">
+							<!--/.col-->
+						
+							  
+							<div class="col-sm-12 col-lg-4">
+                                   <div class="chart-wrapper" style="height:600px;margin-top:25px;margin-bottom:25px;">
+								      
+								      <input type="text" id="myLocation"><input type="button" value="find location" onclick="setLoc()">
+									  <div id="err"></div>
+									  <br /><br />
+									   
+                               	      <div id="map-canvas"></div>
+								   </div>
+							</div>
+														
+						    </div>
+					    </div>
+                    </div>
+
+					
+					 <!--/ cARD -->
+					
+					
+					<div class="card">
+                                <div class="card-header">
+                                    Prediction
+                                </div>
+                                <div class="card-block">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="callout callout-info">
+                                                        <small class="text-muted">Location</small>
+                                                        <br>
+														<strong id="locc" class="h4">-</strong>
+                                                        <div class="chart-wrapper">
+                                                            <canvas id="sparkline-chart-1" width="200" height="30"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/.col-->
+                                                <div class="col-sm-6">
+                                                    <div class="callout callout-danger">
+                                                       
+                                                    </div>
+                                                </div>
+                                                <!--/.col-->
+                                            </div>
+                                            <!--/.row-->
+                                            <hr class="mt-0">
+                                            <ul class="horizontal-bars">
+                                                <li>
+                                                    <div class="title" style="width:400px;" >
+                                                       Lease Length: <span id="lease"> - </span>
+                                                    </div>
+                                                    
+                                                </li>
+                                                <li>
+                                                    <div class="title" style="width:400px;" >
+                                                        Floor Level: <span id="floor"> - </span>
+                                                    </div>
+                                                    
+                                                </li>
+                                                <li>
+                                                    <div class="title" style="width:400px;">
+                                                        Competitors: <span id="competitor"> - </span>
+                                                    </div>
+                                                    
+                                                </li>
+                                                
+                                                
+                                                
+                                            </ul>
+                                        </div>
+                                        <!--/.col-->
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-sm-6" style="width:200%;">
+                                                    <div class="callout callout-warning">
+                                                        <small class="text-muted">Population</small>
+                                                        <br>
+                                                        <strong id="popp" class="h4">-</strong>
+                                                        <div class="chart-wrapper">
+                                                            <canvas id="sparkline-chart-3" width="400" height="30"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!--/.col-->
+                                            </div>
+											
+                                            <!--/.row-->
+                                             <hr class="mt-0">
+                                            <ul class="horizontal-bars">
+                                                <li>
+                                                    <div class="title" style="width:400px;">
+                                                        Estd.Profit: <span id="profit"> - </span>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+                                                    <div class="title"style="width:400px;">
+                                                       Estd.Return: <span id="return"> - </span>
+                                                    </div>
+                                                    
+                                                </li>
+                                                <li>
+                                                    <div class="title"style="width:400px;">
+                                                       Loss vs gain: <span id="lossVsGain"> - </span>
+                                                    </div>
+                                                    
+                                                </li> 
+                                                
+                                            </ul>
+                                        </div>
+ 
+                                        
+                                        <!--/.col-->
+                                    </div>
+                                    <!--/.row-->
+                               
+                                    
+                                </div>
+                            </div>
+					
+                    </div>
+                </div>
+            </div>
+            <!-- /.conainer-fluid -->
+        </main>
+
+        
+
+
+    </div>
+
+    
+
+    <!-- Bootstrap and necessary plugins -->
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="bower_components/pace/pace.min.js"></script>
+
+
+    <!-- Plugins and scripts required by all views -->
+    <script src="bower_components/chart.js/dist/Chart.min.js"></script>
+
+
+    <!-- GenesisUI main scripts -->
+
+    <script src="js/app.js"></script>
+
+
+
+
+
+    <!-- Plugins and scripts required by this views -->
+
+    <!-- Custom scripts required by this view -->
+    <script src="js/views/main.js"></script>
+
+</body>
+
+</html>
