@@ -7,53 +7,26 @@
        #map-canvas {
           margin: 0;
           padding: 0;
-          height: 500px;
-          width: 500px;
+          height: 450px;
+          width: 1000px;
         }
-		
-		#myInput {
-          border-box: box-sizing;
-          background-image: url('img/searchicon.png');
-          background-position: 6px 12px;
-          background-repeat: no-repeat;
-          font-size: 16px;
-          padding: 14px 20px 12px 45px;
-          border: none;
-        }
-
-
-        .dropdown-content {
-           display: block;
-           position: absolute;
-           background-color: #f6f6f6;
-           min-width: 230px;
-           overflow: auto;
-           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-           z-index: 1;
-        }
-
-       .dropdown-content a {
-           color: black;
-           padding: 12px 16px;
-           text-decoration: none;
-           display: block;
-        }
-
-
-
-
-       .dropdown a:hover {background-color: #ddd}
-
-        show {display:block;}
     </style>
     
 	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
     <script>
-	  
-		var a = -25.274398;
-		var b = 133.775136;
-		var c = 4;
-		
+	
+	     var a = -25.274398;
+		 var b = 133.775136;
+		 var c= 4;
+		 var vpopulation = 0;
+		 var vLease = 0;
+		 var vFloor = 0;
+		 var vComp = 0;
+		 var vProfit = 0;
+		 var vReturn = 0;
+		 var vLossGain = 0;
+		 var investment = 100000;
+		 
 	     function initialize() {
             var myLatlng = new google.maps.LatLng(a, b);
             var mapOptions = {
@@ -68,59 +41,91 @@
                                map: map,
                                title: 'My Place!'
             });
-        } 
-
-        function setLoc() {
+        }    
 		
-		   var loc = document.getElementById(myLocation).;
-		   alert(document.getElementById(myLocation));
+		 function setLoc() {
+		   
+		   var loc = document.getElementById("myLocation").value;
+		   
 		   displayLocation(loc);
 		
 		}
 		
 		
         function displayLocation(loc) {
+		
+		  
 		  document.getElementById("err").innerHTML ="";
 		  if (loc == 'chatswood'){
 		    a = -33.800770;
 		    b = 151.179600;
 			c = 15;
 			initialize();
-			displayPrediction(loc);
+			
+			document.getElementById("locc").innerHTML = "Chatswood";
+			document.getElementById("popp").innerHTML = "2200"
+			vpopulation = 2200;
+			vLeasse = 24;
+			vComp = 3;
+			vFloor = 1;
+			displayPrediction(loc)
+			
 		  } else if (loc == 'hurstville'){
 		    a = -33.966667;
 		    b = 151.100000;
 			c = 15;
 			initialize();
-			displayPrediction(loc);
+			
+			
+			document.getElementById("locc").innerHTML = "Hurstville";
+			document.getElementById("popp").innerHTML = "3470";
+			vpopulation = 3470;
+			vLease = 24;
+			vComp = 2;
+			vFloor = 1;
+			displayPrediction(loc)
+			
 		  } else if (loc == 'kiama') {
 		    a = -34.673822;
-		    b = 150.844371;
+		    b = 150.844371; 
 			c = 15;
 			initialize();
-			displayPrediction(loc);
+			
+			document.getElementById("locc").innerHTML = "Kiama";
+			document.getElementById("popp").innerHTML = "1785";
+			vpopulation = 1785;
+			vLease = 36;
+			vComp = 0;
+			vFloor = 1;
+			displayPrediction(loc)
 		  } else {
-		    document.getElementById("err").innerHTML = "There is no matching information."
+		    document.getElementById("err").innerHTML = "There is no matching information.";
 		  }
 		}
         
 		function displayPrediction(loc) {
-
-		  var prediction;
-		  prediction = "<br/>";
-		  prediction = prediction + "Hello this is predcition";
-		  
-		  document.getElementById("prediction").innerHTML = (loc) + prediction;
+	
+		   
+		   document.getElementById("lease").innerHTML = vLease;
+		   document.getElementById("floor").innerHTML = vFloor;
+		   document.getElementById("competitor").innerHTML = vComp;
+		   
+		   vProfit = (0.5* vLease - 1.7 * vFloor - 2.2 * vComp) * investment; 
+		   document.getElementById("profit").innerHTML = vProfit;
+		   
+		   vReturn = vProfit;
+		   document.getElementById("return").innerHTML = vReturn;
+		   
+		   vLossGain = vReturn;
+		   document.getElementById("lossVsGain").innerHTML = vLossGain;
+		   
 		}
         
-		function displayTitle() {
-		  
-		  document.getElementById("find").innerHTML = "Find a location to open store";
 		
-		}
-
+		
 		
     </script>
+
 	
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -172,17 +177,15 @@
             <nav class="sidebar-nav">
                 <ul class="nav">
                     <li class="nav-item">
-                        <a class="nav-link" href="ceo-index.php"><i class="icon-star"></i> Summary </a>
+                        <a class="nav-link" href="ceo-index.html"><i class="icon-star"></i> Summary </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-stores.php"><i class="icon-star"></i> Stores </a>
+                        <a class="nav-link" href="ceo-stores.html"><i class="icon-star"></i> Stores </a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-newstore.html"><i class="icon-star"></i> Open New Store</a>
+                        <a class="nav-link" href="ceo-storemanagement.html"><i class="icon-star"></i> Open New Store</a>
                     </li>
-                    <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-strategy.html"><i class="icon-star"></i> Strategic Planning</a>
-                    </li>
+
                 </ul>
             </nav>
         </div>
@@ -200,15 +203,17 @@
         
             </ol>
 
-	<!--  Population Map  -->		
-
-		
-		
+			
 			<div class="container-fluid">
+
+
+
+
+
                 <div class="animated fadeIn">
   
                     <!--/.row-->
-
+                  <!--/ cARD -->
                     <div class="card">
                         <div class="card-block">
                             <div class="row">
@@ -221,96 +226,140 @@
                                     
                                     
                                     <div class="btn-toolbar float-right" role="toolbar" aria-label="Toolbar with button groups">
-                                        
+                                        <div class="btn-group mr-1" data-toggle="buttons" aria-label="First group">
+                                            
+                                        </div>
                                     </div>
                                 </div>
-								
-                                <!--/.col-->
+                               
                             </div>
-							
                             <!--/.row-->
-
-							<div class="row">
-							      <!--/.col-->
-                                <div class="col-sm-12 col-lg-4">
+							<div clss="row">
+							<!--/.col-->
+						
+							  
+							<div class="col-sm-12 col-lg-4">
                                    <div class="chart-wrapper" style="height:600px;margin-top:25px;margin-bottom:25px;">
 								      
-								      <input type="text" id="myLocation"/><button onclick="setLoc()">Search</button>
-									
-									
+								      <input type="text" id="myLocation"><input type="button" value="find location" onclick="setLoc()">
+									  <div id="err"></div>
 									  <br /><br />
-									    <div id="err"> </div>
+									   
                                	      <div id="map-canvas"></div>
 								   </div>
-								</div>
-								  <!--/.col-->
-								<div class="col-sm-12 col-lg-4">
-								   <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;border-left:solid #fdfefe;">
-                               	      <div style="margin-left:10px;">
-									  
-								<!-- DROP DOWN MENU  
-									  <div class="dropdown">
-                                      <div id="myDropdown" class="dropdown-content">
-                                       <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()"> 
-									    
-                                        <a href="#chatswood" id="chatswood" onClick="displayLocation('chatswood')" >Chatswood</a>
-                                        <a href="#hurstville" id="hurstville" onClick="displayLocation('hurstville')">Hurstville</a>
-                                        <a href="#kiama"id="kiama" onClick="displayLocation('kiama')" >Kiama</a>          
-                                    </div>
-                                    </div> -->
-									  
-								  
-									  <div id="prediction"></div>
-									  </div>
-															
-								   </div>
-								   
-								</div>
-								<div class="col-sm-12 col-lg-4">
-								   <div class="chart-wrapper" style="height:500px;margin-top:25px;margin-bottom:25px;">
-								    <div style="margin-left:10px;">
-								      
-								    </div>
-								   </div>
-								</div>
-								
-                            </div>
-							
-                        </div>
-                        <div class="card-footer">
-                            <ul>
-                                <li class="hidden-sm-down">
-                                    <div class="text-muted">Sales</div>
-                                    <strong>40.15 %</strong>
-                                    <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </li>
-							
-                                <li class="hidden-sm-down">
-                                    <div class="text-muted">Item Returns</div>
-                                    <strong>24.093 Users (20%)</strong>
-                                    <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="text-muted">Pageviews</div>
-                                    <strong>78.706 Views (60%)</strong>
-                                    <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </li>
-                                <li class="hidden-sm-down">
-                                    <div class="text-muted">New Users</div>
-                                    <strong>22.123 Users (80%)</strong>
-                                    <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </li>
+							</div>
+														
+						    </div>
+					    </div>
+                    </div>
 
-                            </ul>
-                        </div>
+					
+					 <!--/ cARD -->
+					
+					
+					<div class="card">
+                                <div class="card-header">
+                                    Prediction
+                                </div>
+                                <div class="card-block">
+                                    <div class="row">
+                                        <div class="col-sm-12 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-sm-6">
+                                                    <div class="callout callout-info">
+                                                        <small class="text-muted">Location</small>
+                                                        <br>
+														<strong id="locc" class="h4">-</strong>
+                                                        <div class="chart-wrapper">
+                                                            <canvas id="sparkline-chart-1" width="200" height="30"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/.col-->
+                                                <div class="col-sm-6">
+                                                    <div class="callout callout-danger">
+                                                       
+                                                    </div>
+                                                </div>
+                                                <!--/.col-->
+                                            </div>
+                                            <!--/.row-->
+                                            <hr class="mt-0">
+                                            <ul class="horizontal-bars">
+                                                <li>
+                                                    <div class="title" style="width:400px;" >
+                                                       Lease Length: <span id="lease"> - </span>
+                                                    </div>
+                                                    
+                                                </li>
+                                                <li>
+                                                    <div class="title" style="width:400px;" >
+                                                        Floor Level: <span id="floor"> - </span>
+                                                    </div>
+                                                    
+                                                </li>
+                                                <li>
+                                                    <div class="title" style="width:400px;">
+                                                        Competitors: <span id="competitor"> - </span>
+                                                    </div>
+                                                    
+                                                </li>
+                                                
+                                                
+                                                
+                                            </ul>
+                                        </div>
+                                        <!--/.col-->
+                                        <div class="col-sm-6 col-lg-4">
+                                            <div class="row">
+                                                <div class="col-sm-6" style="width:200%;">
+                                                    <div class="callout callout-warning">
+                                                        <small class="text-muted">Population</small>
+                                                        <br>
+                                                        <strong id="popp" class="h4">-</strong>
+                                                        <div class="chart-wrapper">
+                                                            <canvas id="sparkline-chart-3" width="400" height="30"></canvas>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!--/.col-->
+                                            </div>
+											
+                                            <!--/.row-->
+                                             <hr class="mt-0">
+                                            <ul class="horizontal-bars">
+                                                <li>
+                                                    <div class="title" style="width:400px;">
+                                                        Estd.Profit: <span id="profit"> - </span>
+                                                    </div>
+
+                                                </li>
+                                                <li>
+                                                    <div class="title"style="width:400px;">
+                                                       Estd.Return: <span id="return"> - </span>
+                                                    </div>
+                                                    
+                                                </li>
+                                                <li>
+                                                    <div class="title"style="width:400px;">
+                                                       Loss vs gain: <span id="lossVsGain"> - </span>
+                                                    </div>
+                                                    
+                                                </li> 
+                                                
+                                            </ul>
+                                        </div>
+ 
+                                        
+                                        <!--/.col-->
+                                    </div>
+                                    <!--/.row-->
+                               
+                                    
+                                </div>
+                            </div>
+					
                     </div>
                 </div>
             </div>
@@ -347,7 +396,6 @@
 
     <!-- Custom scripts required by this view -->
     <script src="js/views/main.js"></script>
-	<script src="js/date.js"></script>
 
 </body>
 
