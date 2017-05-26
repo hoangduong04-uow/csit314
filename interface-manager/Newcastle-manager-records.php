@@ -84,12 +84,12 @@
                 <ul class="nav">
                   
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="Newcastle-manager-index.php"><i class="icon-puzzle"></i> Summary</a>
+                        <a class="nav-link nav-dropdown-toggle" href="newcastle-manager-index.php"><i class="icon-puzzle"></i> Summary</a>
                         <ul class="nav-dropdown-items">
                         </ul>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link nav-dropdown-toggle" href="Newcastle-manager-records.php"><i class="icon-star"></i> Store operations</a>
+                        <a class="nav-link nav-dropdown-toggle" href="newcastle-manager-records.php"><i class="icon-star"></i> Store operations</a>
                         <ul class="nav-dropdown-items">
                             <li class="nav-item">
                                 <a class="nav-link" href="icons-font-awesome.html"><i class="icon-star"></i> Font Awesome</a>
@@ -100,10 +100,7 @@
                         </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="Newcastle-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
-                    </li>
-					<li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="Newcastle-manager-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
+                        <a class="nav-link" href="newcastle-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
                     </li>
                     <li class="divider"></li>
                    

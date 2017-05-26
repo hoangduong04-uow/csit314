@@ -1,39 +1,5 @@
 <?php
     include('../php/ceo/ceo-main.php');
-    foreach ($allInfo as $store) {
-        $totalStoreSales += $store['SALES'];
-    }
-
-    if(!isset($_POST['predicted_profit']))
-        $predicted_profit = 1.1*$totalStoreSales;
-    else
-        $predicted_profit = $_POST['predicted_profit'];
-
-    if(isset($_POST['submit'])) {
-        $updated = true;
-        $workforce = $_POST['workforce'];
-        $hours = $_POST['hours'];
-        $prices = $_POST['prices'];
-        $staff = $_POST['staff'];
-        $return = $_POST['return'];
-        $satisfaction = $_POST['satisfaction'];
-        $sales = $_POST['sales'];
-
-        if(isset($_POST['workforce']))
-            $predicted_profit = changeWorkforce($workforce, $predicted_profit);
-        if(isset($_POST['hours']))
-            $predicted_profit = changeHours($hours, $predicted_profit);
-        if(isset($_POST['prices']))
-            $predicted_profit = changePrices($prices, $predicted_profit);
-        if(isset($_POST['staff']))
-            $predicted_profit = changeStaff($staff, $predicted_profit);
-        if(isset($_POST['return']))
-            $predicted_profit = changeReturn($return, $predicted_profit);
-        if(isset($_POST['satisfaction']))
-            $predicted_profit = changeSat($satisfaction, $predicted_profit);
-        if(isset($_POST['sale']))
-            $predicted_profit = changeSale($workforce, $predicted_profit);
-    }
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +25,7 @@
     <link href="css/style.css" rel="stylesheet">
 
 <script>
-/*
+
 var vProfit;
 var vWork;
 var vHours;
@@ -88,6 +54,7 @@ var vSales;
   }
 
   function strategy(){
+
    document.getElementById("profitT").innerHTML = "Target Profit";
      
    document.getElementById("workVal").value = 1;
@@ -97,8 +64,19 @@ var vSales;
    document.getElementById("return").value=1;
    document.getElementById("satisfaction").value=1;
    document.getElementById("sales").value=1;
+
+    document.getElementById("profitT").innerHTML = "Target Profit";
+   vProfit = parseInt(document.getElementById("profitV").innerHTML);  
+   vWork = 1;
+   vHours = 2;
+   vPrices = 3;
+   vBenefit =  4;
+   vReturn = 5;
+   vSatisfaction = 6;
+   vSales = 7;
+
   }
-*/
+
 
 
 
@@ -191,15 +169,14 @@ var vSales;
                                 <div class="card-block">
                                     <div class="row">
                                         <div class="col-sm-12 col-lg-4" style="width: 900px;">
-                                        <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
                                             <div class="row">
                                                 <div class="col-sm-6"  style="width: 900px;">
                                                     <div class="callout callout-info">
-                                                        <small id="profitT" class="text-muted">Predicted Profit</small>
+                                                        <small id="profitT" class="text-muted">Target Profit</small>
                                                         <br>
-                                                        <strong id="profitV" name="predicted_profit" class="h4"><?php echo $predicted_profit ?></strong>
+                                                        <strong id="profitV" class="h4">9123</strong>
 														<br>
-														<input type="submit" name="submit" value="Calculate Profit" onClick="calcProfit()">
+														<input type="button" value="Calculate Profit" onClick="calcProfit()">
                                                     </div>
                                                 </div>
                                                 <div class="chart-wrapper">
@@ -212,50 +189,49 @@ var vSales;
                                             <ul class="horizontal-bars">
                                                 <li>
                                                     
-                                                     No.Workforce: <input id="workVal" style="height:20px;" name="workforce" type="text"><span id="change"/>
+                                                     No.Workforce: <input id="workVal" style="height:20px;" type="text"><span id="change"/>
                                                    
                                                     
                                                 </li>
                                                 <li>
                                                     
-                                                     Operating hours: <input id="openH" style="height:20px;" name="hours" type="text"><span id="change"/>
+                                                     Operating hours: <input id="openH" style="height:20px;" type="text"><span id="change"/>
                                                     
                                                    
                                                 </li>
                                                 <li>
                                                    
-                                                        Product prices: <input id="prices" style="height:20px;" name="prices" type="text"></input><span id="change"/>
+                                                        Product prices: <input id="prices" style="height:20px;" type="text"></input><span id="change"/>
                                                    
                                                 
                                                 </li>
 												 <li>
                                                    
-                                                        Staff benefits: <input id="benefit" style="height:20px;" name="staff" type="text"><span id="change"/>
+                                                        Staff benefits: <input id="benefit" style="height:20px;" type="text"><span id="change"/>
                                                     
                                                 
                                                 </li>
                                                 <li>
                                                     
-                                                        Return: <input id="return" style="height:20px;" name="return" type="text"><span id="change"/>
+                                                        Return: <input id="return" style="height:20px;" type="text"><span id="change"/>
                                                     
                                                     
                                                 </li>
                                                 <li>
                                                   
-                                                        Emp.Satisfaction: <input id="satisfaction" style="height:20px;" name="satisfaction" type="text"><span id="change"/>
+                                                        Emp.Satisfaction: <input id="satisfaction" style="height:20px;" type="text"><span id="change"/>
                                                    
                                                     
                                                 </li>
                                                 <li>
                                                    
-                                                        Sales: <input id="sales" style="height:20px;" name="sales" type="text"><span id="change"/>
+                                                        Sales: <input id="sales" style="height:20px;" type="text"><span id="change"/>
                                                    
                                                     
                                                 </li>
                                                
                                                 
                                             </ul>
-                                        </form>
                                         </div>
                                         
                                     </div>

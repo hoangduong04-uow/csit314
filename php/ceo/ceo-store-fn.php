@@ -41,6 +41,7 @@ function calStoreProfit($conn, $tname) {
   return $result->fetch_row()[0];  
 }
 
+
 function calTotalStoreCustomers($conn,$tname) {
   $query = "SELECT * FROM ".$tname;
   $result = execQuery($conn, $query, "calTotalStoreExpense");
@@ -51,5 +52,8 @@ function calTotalStoreCustomers($conn,$tname) {
   }
   return $customers;
 }
+
+
+
 
 ?>
