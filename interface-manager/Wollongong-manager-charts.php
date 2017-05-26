@@ -242,7 +242,7 @@
         type: 'line'
     },
     title: {
-        text: 'The Pordiction of Monthly Average'
+        text: 'The Perdiction of Monthly Average'
     },
     subtitle: {
         text: 'Source: JBHIFI'
@@ -343,7 +343,7 @@ Highcharts.chart('container3', {
         type: 'column'
     },
     title: {
-        text: 'Top profits for Item'
+        text: 'Top sales for Item'
     },
    
     xAxis: {
@@ -370,7 +370,7 @@ Highcharts.chart('container3', {
     yAxis: {
         min: 0,
         title: {
-            text: 'Sales'
+            text: 'Profits($)'
         }
     },
     tooltip: {
