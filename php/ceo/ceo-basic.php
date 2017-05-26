@@ -48,35 +48,24 @@
   }
 
   function changeWorkforce ($workforce, $value) {
-    return change ($workforce, $value, 0.5);
-  }
-  
-  function changeHours ($hours, $value ){
-    return change ($hours, $value, 0.8); 
+    $pct = $workforce/100;
+    $scale = 0.5;
+
+    if ($pct < -0.5)
+      $value += $value*$pct*$scale;
+    else if ($pct > -0.5 && $pct < 0)
+      $value -= $value*$pct*$scale;
+    else if ($pct > 0 && $pct < 0.5)
+      $value += $value*$pct*$scale;
+    else if ($pct > 0.5)
+      $value -= $value*$pct*$scale; 
+
+    return $value;  
   }
 
-  function changeStaff ($staff, $value ){
-    return change ($staff, $value, 0.3); 
-  }
-
-  function changeSat ($sat, $value ){
-    return change ($sat, $value, 0.2); 
-  }
-
-  function changeReturn ($return, $value ){
-    return change ($return, $value, 0.4); 
-  }
-
-  function changeSale ($sale, $value ){
-    return change ($sale, $value, 1.1); 
-  }
-
-  function changePrices ($prices, $value ){
-    return change ($prices, $value, 1.1); 
-  }
-
-  function change ($param, $value, $scale) {
-    $pct = $param/100;
+  function changePrice ($price, $value ){
+    $pct = $price/100;
+    $scale = 0.8;
 
     if ($pct < -0.5)
       $value += $value*$pct*$scale;
