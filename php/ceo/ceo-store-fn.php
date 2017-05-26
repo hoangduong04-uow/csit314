@@ -42,11 +42,14 @@ function calStoreProfit($conn, $tname) {
 }
 
 function calTotalStoreCustomers($conn,$tname) {
-  $query = "SELECT NUMBER, GENDER FROM ".$tname;
+  $query = "SELECT * FROM ".$tname;
   $result = execQuery($conn, $query, "calTotalStoreExpense");
-  $row = $result->fetch_assoc();
-  $totalExpense = $row['FREIGHT'] + $row['WAGES'] + $row['OVERHEAD'];
-  return $totalExpense;
+  if ($result->num_rows > 0) {
+      while($row = $result->fetch_assoc()) {
+        $customers[$row['GENDER']] = $row['NUM'];
+      }
+  }
+  return $customers;
 }
 
 ?>

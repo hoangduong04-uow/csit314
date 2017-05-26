@@ -31,16 +31,26 @@
         $date++;
     }   
 
-    // Get sale and return percentage
+    // Get income and sale percentage
     $income_pct = 95;
+    $expense_pct = 87.89;
+
     $totalItems = $totalStoreSalesCount + $totalStoreReturn;
     $sale_pct = number_format((float)(100*($totalStoreSalesCount/$totalItems)), 2, '.', '');
+
+    // Get number of customers
+    $customers = calTotalStoreCustomers($conn, "customers");
+    $male = $customers['Male'];
+    $female = $customers['Female'];
+    $totalCustomers = $male + $female;
+    $customer_pct = 75.84;
+
 
     // Working function
     $value = 10;
     $value = changeWorkforce(15, $value);
     $value = changePrice(14, $value);
-    echo $value;
+    //echo $value;
 
 ?>
 
@@ -109,7 +119,7 @@
                         <a class="nav-link" href="ceo-newstore.html"><i class="icon-star"></i> Store Management</a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a class="nav-link" href="ceo-strategy.html"><i class="icon-star"></i> Strategic Planning</a>
+                        <a class="nav-link" href="ceo-strategy.php"><i class="icon-star"></i> Strategic Planning</a>
                     </li>
 
                 </ul>
@@ -168,7 +178,7 @@
                         <div class="col-sm-6 col-lg-3">
                             <div class="card card-inverse card-warning">
                                 <div class="card-block pb-0">
-                                    <h4 class="mb-0">23870</h4>
+                                    <h4 class="mb-0"><?php echo $totalCustomers ?></h4>
                                     <p>Customers</p>
                                 </div>
                                 <div class="chart-wrapper" style="height:70px;">
@@ -246,16 +256,16 @@
                                 </li>
                                 <li>
                                     <div class="text-muted">Customers</div>
-                                    <strong>78.706 Views (60%)</strong>
+                                    <strong><?php echo $customer_pct ?>% of last month</strong>
                                     <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar bg-warning" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-warning" role="progressbar" style="width: <?php echo $customer_pct ?>%" aria-valuenow="<?php echo $customer_pct ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </li>
                                 <li class="hidden-sm-down">
-                                    <div class="text-muted">New Users</div>
-                                    <strong>22.123 Users (80%)</strong>
+                                    <div class="text-muted">Expense</div>
+                                    <strong><?php echo $expense_pct ?>% of last month</strong>
                                     <div class="progress progress-xs mt-h">
-                                        <div class="progress-bar bg-danger" role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar bg-danger" role="progressbar" style="width: <?php echo $expense_pct ?>%" aria-valuenow="<?php echo $expense_pct ?>" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </li>
 
