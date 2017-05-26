@@ -16,10 +16,12 @@
     while ($date < 30) {
         foreach ($store_list as $city => $store) {
             $query = "SELECT PROFIT FROM $store WHERE DATE=$date";
-            echo $query;
-            $profit[$date];
+            $result = execQuery($conn, $query, "daily profit");
+            $profit[$date] +=  $result->fetch_row()[0];
         }
+        $date++;
     }   
+    print_r($profit);
 ?>
 
 <!DOCTYPE html>
@@ -199,7 +201,7 @@
                             </div>
                             <!--/.row-->
                             <div class="chart-wrapper" style="height:400px;margin-top:40px;">
-                            <div id="container"></div>
+                            <div id="daily-profit-linechart"></div>
                             </div>
                         </div>
                         <div class="card-footer">
@@ -271,18 +273,19 @@
     <script src="https://code.highcharts.com/highcharts-3d.js"></script>
 
     <script>
-        Highcharts.chart('container', {
+    var date_list = "<?php $date=1; while ($date<30) {echo "'Day $date'"; if($date!==29) echo ","; } ?>";
+        Highcharts.chart('daily-profit-linechart', {
     chart: {
         type: 'line'
     },
     title: {
-        text: 'Monthly Average Temperature'
+        text: 'Daily profit';
     },
     subtitle: {
         text: 'Source: WorldClimate.com'
     },
     xAxis: {
-        categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        categories: [date_list]s
     },
     yAxis: {
         title: {
