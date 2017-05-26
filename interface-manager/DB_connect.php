@@ -77,6 +77,7 @@ function predictByReduceCost($conn,$tname="wollongong",$reducedCost)
   return $resultTable;
 }
 
+
 function predictByDecreaseReturns($conn,$tname="wollongong",$decreaseReturns)
 {
   $query = "SELECT * FROM ".$tname;
@@ -91,8 +92,8 @@ function predictByDecreaseReturns($conn,$tname="wollongong",$decreaseReturns)
 							'QUANTITY'=>$row['QUANTITY'],
 							'SALECOUNT'=>$row['SALECOUNT'],
 							'TOTALSALE'=>$row['TOTALSALE'],
-							'COST_PRICE'=>($row['COST_PRICE']-$row['COST_PRICE']*reducedCost),
-							'PROFIT' => ($row['SELLING_PRICE']-($row['COST_PRICE']-$row['COST_PRICE']*reducedCost))*$row['SALECOUNT'],
+							'COST_PRICE'=>$row['COST_PRICE'],
+							'PROFIT' => $row['PROFIT'],
 							'RETURN_ITEMS'=>$row['RETURN_ITEMS']);
     }
   }

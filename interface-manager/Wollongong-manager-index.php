@@ -103,6 +103,10 @@
                         <a class="nav-link" href="Wollongong-manager-charts.php"><i class="icon-pie-chart"></i> Charts</a>
                     </li>
                     <li class="divider"></li>
+					<li class="nav-item">
+                        <a class="nav-link" href="Wollongong-manager-strategy.php"><i class="icon-pie-chart"></i> Strategic Planning</a>
+                    </li>
+                    <li class="divider"></li>
                  
 
                 </ul>
@@ -207,7 +211,7 @@
                                             <a class="dropdown-item" href="#">Something else here</a>
                                         </div>
                                     </div>
-                                    <h4 class="mb-0"><?php print_r($allInfo['wollongong']['TOTAL EXPENSE']) ?></h4>
+                                    <h4 class="mb-0">$<?php print_r($allInfo['wollongong']['TOTAL EXPENSE']) ?></h4>
                                     <p>Total Expenses</p>
                                 </div>
                                 <div class="chart-wrapper px-1" style="height:70px;">
