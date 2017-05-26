@@ -3,6 +3,7 @@
 	include('DB_connect.php');
 	include('manager_dashboard.php');
 	$quantities=calTotalSalesNo($conn, "wollongong");
+	$topSales=getTopItemBySaleCount($conn,"wollongong");
  ?>
 
 
@@ -309,7 +310,7 @@
                                                     <i class="icon-screen-smartphone bg-warning"></i>
                                                     <div class="desc">
                                                         <div class="title">Samsung KU6000 70" 4K UHD HDR Smart LED LCD TV</div>
-                                                        
+                                     
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
@@ -324,7 +325,8 @@
                                                     <i class="icon-user bg-danger"></i>
                                                     <div class="desc">
                                                         <div class="title">Apple iMac with Retina 5K display 27" 3.2GHz</div>
-                                                        
+						
+                                       
                                                     </div>
                                                     <div class="value">
                                                         <div class="small text-muted">Sold</div>
