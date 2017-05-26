@@ -11,6 +11,15 @@
         $totalStoreReturn += $store['RETURN'];
         $totalStoreExpense += $store['TOTAL EXPENSE'];
     }
+
+    $date = 1;
+    while ($date < 30) {
+        foreach ($store_list as $city => $store) {
+            $query = "SELECT PROFIT FROM $store WHERE DATE=$date";
+            echo $query;
+            $profit[$date];
+        }
+    }   
 ?>
 
 <!DOCTYPE html>
